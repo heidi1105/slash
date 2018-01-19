@@ -1,3 +1,102 @@
-<p>
-  signup works!
-</p>
+ <p *ngIf="error"> {{error}} </p>
+<div id="login">
+	<form (submit)="loginEvent()" #loginForm="ngForm">
+	<table>
+    <tr>
+        <td> *Email: </td>
+        <td> <input type="email" name="email2"    
+            required
+            pattern="[A-Za-z0-9.+_-]+@[a-zA-Z0-9.+_-]+\.[a-zA-Z]+"
+            [(ngModel)]="user.email" 
+            #email2="ngModel" > </td>
+        <td *ngIf="email2.invalid"> Email is required </td>
+    </tr>
+
+
+
+
+    <tr>
+        <td> *Password: </td>
+        <td> <input type="password" name="password2"
+            required
+            minlength="16" 
+            [(ngModel)]="user.password" 
+            #password2="ngModel" > </td>
+        <td *ngIf="password2.invalid"> Password is required </td>
+    </tr>
+<tr><td></td><td>
+	<button type="submit" [disabled]="!(loginForm.valid)"> Login </button>
+</td></tr>
+
+</table>
+</form>
+</div>
+
+
+<div id="reg">
+	<form (submit)="regEvent()" #regForm="ngForm">
+	<table>
+    <tr>
+        <td> *Email: </td>
+        <td> <input type="email" name="email"    
+            required
+            pattern="[A-Za-z0-9.+_-]+@[a-zA-Z0-9.+_-]+\.[a-zA-Z]+"
+            [(ngModel)]="newUser.email" 
+            #email="ngModel" > </td>
+        <td *ngIf="email.invalid"> Email is required </td>
+    </tr>
+
+		
+    <tr>
+        <td> *First Name: </td>
+        <td> <input type="text" name="firstname" 
+            required
+            minlength="2" 
+            [(ngModel)]="newUser.firstname" 
+            #firstname="ngModel" > </td>
+        <td *ngIf=" firstname.invalid"> First name is required and at least 2 characters long </td>
+
+    </tr>
+
+    <tr>
+        <td> *Last Name: </td>
+        <td> <input type="text" name="lastname"
+            required
+            minlength="2" 
+            [(ngModel)]="newUser.lastname" 
+            #lastname="ngModel" > </td>
+        <td *ngIf="lastname.invalid"> Last name is required and at least 2 characters long </td>
+    </tr>
+
+
+
+
+
+    <tr>
+        <td> *Password: </td>
+        <td> <input type="password" name="password"
+            required
+            minlength="16" 
+            [(ngModel)]="newUser.password" 
+            #password="ngModel" > </td>
+        <td *ngIf="password.invalid"> Password is required </td>
+    </tr>
+
+
+    <tr>
+        <td> *Password confirmation: </td>
+        <td> <input type="password" name="cfmpwd" 
+            required
+            minlength="16" 
+            [(ngModel)]="newUser.cfmpwd" 
+            #cfmpwd="ngModel" > </td>
+        <td *ngIf="cfmpwd.invalid"> Confirmed password is required </td>
+        <td *ngIf="cfmpwd.valid && newUser.cfmpwd!==newUser.password"> Not the same password </td>
+    </tr><tr><td></td><td>
+     <button type="submit" [disabled]="!(regForm.valid && user.pwd === user.cfmpwd)"> 
+ Register </button> </td></tr>
+</table>
+
+
+
+  </form>

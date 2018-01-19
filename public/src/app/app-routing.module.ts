@@ -40,7 +40,8 @@ const routes: Routes = [
 {
 	path: 'shipping',
 	component: ShippingComponent
-}
+},
+
 
 
 ];

@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 let path = require('path');
 let bodyParser = require('body-parser')
-let mysql = require('mysql')
+let mysql = require('sequelize')
 let session = require('express-session');
 
 let config = {
