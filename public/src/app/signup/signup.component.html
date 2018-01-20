@@ -7,7 +7,7 @@
 				placeholder="Email"
 				required
 				pattern="[A-Za-z0-9.+_-]+@[a-zA-Z0-9.+_-]+\.[a-zA-Z]+"
-				[(ngModel)]="user.email"
+				[(ngModel)]="loggedUser.email"
 				#email2="ngModel">
 				<p class="error" *ngIf="email2.invalid && !email2.pristine">Email is required</p>
 				<input type="password"
@@ -15,11 +15,13 @@
 						placeholder="Password"
             required
             minlength="8"
-            [(ngModel)]="user.password"
+            [(ngModel)]="loggedUser.password"
             #password2="ngModel">
 				<p *ngIf="password2.invalid && !password2.pristine" class="error"> Password is required </p>
 				<p *ngIf="error" class="error"> {{error}} </p>
-				<button type="submit" [disabled]="!(loginForm.valid)"> Login </button>
+				<button type="submit" [disabled]="!(loginForm.valid)">
+					Login
+				</button>
 		</form>
 	</div>
 	<div id="reg">

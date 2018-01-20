@@ -15,4 +15,12 @@ export class SlashService {
 		return this._http.get('/api/logout').map(res=>res.json()).toPromise();
 	}
 
+		// Login
+	register(user){
+		return this._http.post('/api/register', user).map(res=>res.json()).toPromise();
+	}
+	login(user){
+		console.log("in service's login method", user);
+		return this._http.post('/api/login', user).map(res=>res.json()).toPromise();
+	}
 }
