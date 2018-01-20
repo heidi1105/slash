@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 let path = require('path');
 let bodyParser = require('body-parser')
-let mysql = require('sequelize')
+let sequelize = require('sequelize')
 let session = require('express-session');
 
 let config = {
@@ -14,7 +14,7 @@ app.use(bodyParser.json({extended:true}));
 
 app.use(express.static(path.join(__dirname, 'public', 'dist')))
 
-require('./server/config/mysql')
+require('./server/models/sequelize')
 
 let routes_setter = require('./server/config/routes')
 routes_setter(app);
