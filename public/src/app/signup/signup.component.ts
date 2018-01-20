@@ -10,7 +10,10 @@ import { Router } from '@angular/router'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+	newUser: User = new User();
+	loggedUser: User = new User();
+	errors: Array<string> = [];
+	
   constructor(private _slashService:SlashService, private _router:Router) { }
 
   ngOnInit() {

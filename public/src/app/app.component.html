@@ -1,45 +1,37 @@
-<img id="logo" src="assets/img/slash_logo2_112217.png" alt="slash logo">
-
+<div class="header">
+	<img id="logo" src="assets/img/slash_logo2_112217.png" alt="slash logo">
 	<nav class="nav" id="myTopnav">
-		<a [routerLink]="['home']" class="navLinks active">Home</a>
+		<a [routerLink]="['']" class="navLinks active">Home</a>
 		<a [routerLink]="['products']" class="navLinks">All Products</a>
 		<div class="dropdown">
 			<a [routerLink]="['products']" class="navLinks">Shop Brands</a>
 
-<!-- 			<div class="dropdown-content">
+			<div class="dropdown-content">
 				<a href="#" class="navLinks">Link 1</a>
 				<a href="#" class="navLinks">Link 2</a>
 				<a href="#" class="navLinks">Link 3</a>
-			</div> -->
+			</div>
 
 		</div>
-		
-		<a [routerLink]="['cart']" class="navLinks">Cart</a>
-		<a [routerLink]="['login']" class="navLinks">Login / Sign up </a>
-
-
-
-		<a href="javascript:void(0);" class="icon navLinks" onclick="dropDown()">&#9776;</a>
+		<a class="navLinks" *ngIf="!session" [routerLink]="['login']">Sign In</a>
+		<a class="navLinks" *ngIf="session"  (click)="logout()">Sign Out</a>
+		<a [routerLink]="['cart']" class="navLinks cartLink"><img id="cart" src="assets/img/cart.svg"></a>
+		<a href="javascript:void(0);" class="icon navLinks" (click)="dropDown()">&#9776;</a>
 	</nav>
-
-
-
-
-
-<router-outlet></router-outlet>
-
+</div>
+	<div class="container">
+		<router-outlet></router-outlet>
+	</div>
 	<div id="bottom">
 		<h2 class="follow">Follow us</h2>
 		<div class="social">
-			<a href="https://www.instagram.com/slashss/"><img src="assets/img/instagram.png"></a>
-			<a href=""><img src="assets/img/facebook.png"></a>
-			<a href=""><img src="assets/img/twitter.png"></a>
+			<a href="https://www.instagram.com/slashss/"><img style="width: 35px" src="assets/img/instagram.png"></a>
+			<a href=""><img style="width: 40px" src="assets/img/facebook.png"></a>
+			<a href=""><img style="width: 40px" src="assets/img/weibo.png"></a>
 		</div>
 		<div id="links">
 			<a [routerLink]="['aboutus']" class="navLinks">About Us</a>
 			<a [routerLink]="['shipping']" class="navLinks">Shipping Policy</a>
 			<a [routerLink]="['media']" class="navLinks">Media</a>
-
 		</div>
 	</div>
-

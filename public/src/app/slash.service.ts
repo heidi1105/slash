@@ -9,4 +9,10 @@ export class SlashService {
 
   constructor(private _http:Http) { }
 
+		// AppComponent
+	logout(){
+		console.log('logout service');
+		return this._http.get('/api/logout').map(res=>res.json()).toPromise();
+	}
+
 }

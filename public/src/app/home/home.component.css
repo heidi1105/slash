@@ -1,0 +1,9 @@
+.pic{
+	height: stretch;
+	width: 100%;
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-image: url('../../assets/img/set.jpg');
+}
