@@ -1,16 +1,17 @@
 .header{
 	text-align: center;
 	width: 100%;
-	height: 20vh;
+	height: 170px;
 }
 .container{
-	max-height: 64vh;
+	height: 69vh;
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
 	text-align: center;
+	overflow: scroll;
 }
 #logo{
 	margin-top: 1vh;
@@ -75,11 +76,11 @@
 	border-bottom: none !important;
 }
 #bottom{
+	position: fixed;
 	text-align: center;
 	font-family: arial;
 	font-family: 'Lato', sans-serif;
 	color: #878787;
-	position: fixed;
 	bottom: 0vh;
 	width: 100%;
 }
@@ -151,6 +152,9 @@
 }
 @media only screen and (max-width : 570px){
 	#links a{
-		display: block;
+		font-size: 1em;
+	}
+	.container{
+		height: 67vh;
 	}
 }
