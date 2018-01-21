@@ -77,10 +77,10 @@ select::-ms-expand {
 	text-align: center;
 }
 
-@media ( max-width: 700px ) {
+@media ( max-width: 820px ) {
 
 	.product-card {
-		flex: 1 20%;
+		flex: 1 30%;
 	}
 
 	.products .product-card:first-child,
