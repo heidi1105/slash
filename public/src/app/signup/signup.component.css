@@ -29,11 +29,14 @@ h2{
 	margin: 0;
 	padding: 0;
 }
+p{
+	font-size: 1rem;
+}
 input{
 	display: block;
 	margin: 10px auto;
 	font-size: .9em;
-	width: 100%;
+	width: 90%;
 }
 input::-webkit-input-placeholder {
 	font-family: 'Lato', sans-serif;
@@ -65,14 +68,16 @@ input:-ms-input-placeholder {
 	background: #F7F7F7;
 	color: #000000;
 }
-@media only screen and (max-width : 500px){
+@media only screen and (max-width : 800px){
 	.wrapper {
 		padding: 0 !important;
-		margin-top: 20px;
 		grid-template-columns: repeat(1, 1fr);
 		grid-auto-rows: minmax(200px, auto);
 		grid-gap: 0;
-		width: 100%;
+		margin-top: -20px;
+	}
+	input{
+		width: 70%;
 	}
 	.wrapper h3{
 		margin: 0;
@@ -86,6 +91,14 @@ input:-ms-input-placeholder {
 		grid-row: 2;
 	}
 	.btn{
-		width: 60%;
+		width: 50%;
+	}
+}
+@media only screen and (max-width : 500px){
+	.wrapper{
+		width: 100%;
+	}
+	input{
+		width: 80%;
 	}
 }
