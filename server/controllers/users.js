@@ -9,7 +9,7 @@ module.exports={
 		res.json(true)
 	}
 
-	login:(req, res)=>{
-		console.log("in login");
-	}
+	// login:(req, res)=>{
+	// 	console.log("in login");
+	// }
 }

@@ -1,7 +1,7 @@
 .pic{
-	height:auto;
+	height: 500px;
 	width: 100%;
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;

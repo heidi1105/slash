@@ -37,8 +37,7 @@
 	color: black;
 	padding: 0 15px;
 	text-decoration: none;
-	font-size: 1.8em;
-	margin: 0;
+	font-size: 1.7em;
 }
 .dropdown {
     position: inherit;
@@ -76,7 +75,7 @@
 	border-bottom: none !important;
 }
 #bottom{
-	position: fixed;
+	position:static;
 	text-align: center;
 	font-family: arial;
 	font-family: 'Lato', sans-serif;
