@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SlashService } from '../slash.service';
+import {ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _slashService: SlashService, private _router: Router,
+	private _route: ActivatedRoute) { }
 
   ngOnInit() {
   }
-
 }

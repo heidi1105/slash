@@ -13,6 +13,7 @@ module.exports={
 		res.json(true)
 	},
 
+
 	login:(req, res)=>{
 		console.log("in login");
 		res.json(true)
@@ -81,3 +82,4 @@ module.exports={
 
 
 }
+

@@ -37,8 +37,8 @@
 	color: black;
 	padding: 0 15px;
 	text-decoration: none;
-	font-size: 1.8em;
-	margin: 0;
+	font-size: 1.3em;
+	text-transform: uppercase;
 }
 .dropdown {
     position: inherit;
@@ -69,14 +69,14 @@
     display: block !important;
 }
 #cart{
-	width: 40px;
-	margin-bottom: -10px;
+	width: 30px;
+	margin-bottom: -7px;
 }
 .cartLink:hover{
 	border-bottom: none !important;
 }
 #bottom{
-	position: fixed;
+	position:static;
 	text-align: center;
 	font-family: arial;
 	font-family: 'Lato', sans-serif;
