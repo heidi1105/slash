@@ -1,8 +1,8 @@
 var fs= require('fs');
-
 var path=require('path');
-
 let Sequelize = require('sequelize');
+var db        = {};
+
 
 let sequelize = new Sequelize('slash', 'root', 'root', {
   host: 'localhost',
@@ -17,3 +17,13 @@ fs.readdirSync(models_path).forEach(function(file){
 	}
 })
 
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;

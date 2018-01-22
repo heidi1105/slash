@@ -1,3 +1,45 @@
-<p>
-  admin works!
-</p>
+<form (submit)="createBrand()" #brandForm="ngForm">
+	<h1> Create a brand </h1>
+	<p> *Brand name:  
+		<input type="text" name ="name" required minlength="2" 
+		[(ngModel)]="newBrand.name" #name="ngModel" > </p>
+		<p *ngIf=" name.invalid"> Brand name is required </p>
+		<p> Description: 
+		<input type="text" name ="desc" 
+		[(ngModel)]="newBrand.desc" #name="ngModel" > </p>
+		<p> *Region: 
+		<input type="text" name ="desc" required minlength="2" 
+		[(ngModel)]="newBrand.region" #name="ngModel" > </p>		
+	<button type="submit"> Create Brand </button>
+</form>
+
+<form (submit)="createProduct()" #productForm="ngForm">
+	<h1> Create a product </h1>
+	<p> *Brand </p>
+
+	<select name="brandId" [(ngModel)]="newProduct.brandId" #brandId="ngModel" >
+
+		<option *ngFor=" let brand of brands" value={{brand.id}}> {{brand.name}} </option>
+	</select>
+
+	<p> *Product name:  
+		<input type="text" name ="name" required minlength="2" 
+		[(ngModel)]="newProduct.name" #name="ngModel" > </p>
+		<p> Description: 
+		<input type="text" name ="desc" 
+		[(ngModel)]="newProduct.desc" #name="ngModel" > </p>
+		<p> Price: 
+		<input type="number" name ="price" required  
+		[(ngModel)]="newProduct.price" #name="ngModel" > </p>
+
+
+	<button type="submit"> Create Products </button>
+</form>
+
+
+
+
+
+
+
+
