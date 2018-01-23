@@ -1,10 +1,10 @@
 .header{
 	text-align: center;
 	width: 100%;
-	height: 170px;
+	height: 20vh;
 }
 .container{
-	height: 69vh;
+	height: 70vh;
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -37,8 +37,7 @@
 	color: black;
 	padding: 0 15px;
 	text-decoration: none;
-	font-size: 1.3em;
-	text-transform: uppercase;
+	font-size: 1em;
 }
 .dropdown {
     position: inherit;
@@ -76,13 +75,16 @@
 	border-bottom: none !important;
 }
 #bottom{
-	position:static;
+	position: static;
 	text-align: center;
 	font-family: arial;
 	font-family: 'Lato', sans-serif;
 	color: #878787;
 	bottom: 0vh;
 	width: 100%;
+	padding: 1%;
+	height: 10vh;
+	margin: 0;
 }
 .follow{
 	border-bottom: 2px solid #878787;
@@ -96,6 +98,24 @@
 }
 .social{
 	margin-bottom: -1vh;
+	vertical-align: top;
+}
+#ig{
+	width: 35px;
+}
+.socialLinks{
+	width: 40px;
+}
+@media only screen and (max-height : 800px){
+	.header{
+		height: 170px;
+	}
+	.container{
+		height: 80%;
+	}
+	.bottom{
+		height: 100px;
+	}
 }
 @media only screen and (max-width : 820px){
 	body{
@@ -109,11 +129,14 @@
 	.nav a {
 		display: none;
 		color: #ffffff !important;
+		padding: 20px;
 	}
   .nav a.icon {
     float: right;
     display: block;
 		text-decoration: none !important;
+		font-size: 1.5em;
+		padding: 10px;
   }
 	.nav.responsive {
 		position: relative;
@@ -144,7 +167,7 @@
 	.dropdown-content{
 		right: 0;
 		width: 50%;
-		margin-top: -53px;
+		margin-top: -59px;
 	}
 	.dropdown-content a{
 		color: #000000 !important;
@@ -154,7 +177,25 @@
 	#links a{
 		font-size: 1em;
 	}
+	.header{
+		height: 150px;
+	}
 	.container{
-		height: 67vh;
+		height: 66vh;
+	}
+	.bottom{
+		height: 80px;
+	}
+	.social{
+		padding-top: 10px;
+	}
+	#ig{
+		width: 30px;
+	}
+	.face{
+		margin: 0 4%;
+	}
+	.socialLinks{
+		width: 35px;
 	}
 }
