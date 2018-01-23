@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SlashService } from '../slash.service';
 import {ActivatedRoute, Router } from '@angular/router';
+import * as $ from 'jquery/dist/jquery.min.js';
 
 @Component({
   selector: 'app-products',
@@ -13,13 +14,11 @@ export class ProductsComponent implements OnInit {
 	private _route: ActivatedRoute) { }
 
   ngOnInit() {
-  }
-	dropDown() {
-		var x = document.getElementById("doesThisWork");
-		if (x.className === "product-card") {
-			x.className += " modal";
-		} else {
-			x.className = "product-card";
-		}
+		$(document).ready(function(){
+    $(".product-card").click(function(){
+        $(this).hide();
+    });
+});
 	}
+
 }
