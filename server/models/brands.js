@@ -8,11 +8,8 @@ module.exports=(sequelize, DataTypes)=>{
 
 	brands.associate=function(models){
 		models.brands.hasMany(models.products, {foreignKey: 'brandId'})
-
 	}
-
 	return brands;
 
 }
-
 

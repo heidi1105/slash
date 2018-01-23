@@ -14,7 +14,7 @@ app.use(bodyParser.json({extended:true}));
 
 app.use(express.static(path.join(__dirname, 'public', 'dist')))
 
-require('./server/config/sequelize')
+require('./server/config/dbconfig')
 
 let routes_setter = require('./server/config/routes')
 routes_setter(app);
