@@ -1,5 +1,5 @@
 module.exports=(sequelize, DataTypes)=>{
-	let products = sequelize.define('products', {
+	var products = sequelize.define('products', {
 	name :{type: DataTypes.STRING(100), allowNull:false},
 	desc :{type: DataTypes.TEXT},
 	inventory :{type: DataTypes.INTEGER, allowNull:false, defaultValue: 1000},

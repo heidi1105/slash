@@ -23,7 +23,9 @@ module.exports={
 		console.log("controllers/createBrand");
 
 		models.brands.create({
-			name: req.body.name
+			name: req.body.name,
+			desc: req.body.desc,
+			region: req.body.region
 		}).then(function() {
    	 
   		});
@@ -33,7 +35,7 @@ module.exports={
 	getBrands:(req, res)=>{
 		console.log("controllers/getting brands")
 		models.products.findAll({
-			include:[{model:models.brands}],
+//			include:[{model:models.brands}],
 			raw:true
 		}).then((err, brands)=>{
 			console.log("getting brands")
@@ -68,10 +70,10 @@ module.exports={
 			name:req.body.name,
 			desc:req.body.desc,
 			price:req.body.price,
-			BrandId: req.body.brandId
+			brandId: req.body.brandId
 		}
 		).then(function(record) {
-			console.log(record)
+//			console.log(record)
     	 		})
   	
 		res.json(true);
