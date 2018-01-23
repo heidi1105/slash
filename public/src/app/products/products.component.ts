@@ -14,12 +14,6 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
   }
-	dropDown() {
-		var x = document.getElementById("doesThisWork");
-		if (x.className === "product-card") {
-			x.className += " modal";
-		} else {
-			x.className = "product-card";
-		}
-	}
+
+
 }
