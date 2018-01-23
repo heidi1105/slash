@@ -9,5 +9,7 @@ module.exports=(sequelize, DataTypes)=>{
 	deliver_date:{type:DataTypes.DATE},
 	payment: {type:DataTypes.STRING(255)}
 })
+
+
 	return shipments;
 }
