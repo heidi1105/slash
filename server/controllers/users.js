@@ -19,18 +19,17 @@ module.exports={
 		res.json(true)
 	},
 
-	createBrand:(req, res)=>{
-		console.log("controllers/createBrand");
+	// createBrand:(req, res)=>{
+	// 	console.log("controllers/createBrand");
 
-		models.brands.create({
-			name: req.body.name,
-			desc: req.body.desc,
-			region: req.body.region
-		}).then(function() {
-   	 
-  		});
-		res.json(true);
-	},
+	// 	models.brands.create({
+	// 		name: req.body.name,
+	// 		desc: req.body.desc,
+	// 		region: req.body.region
+	// 	}).then(function() {   	 
+ //  		});
+	// 	res.json(true);
+	// },
 
 	getBrands:(req, res)=>{
 		console.log("controllers/getting brands")
@@ -42,10 +41,28 @@ module.exports={
 				console.log("err" + err)
 
 			}else{
-				console.log("succes" + brands);
 				res.json(brands)
 			}		
 		})
+	},
+
+	getCategories:(req, res)=>{
+		console.log("controllers/getting categories")
+		models.categories.findAll({
+//			include:[{model:models.categories}],
+			raw:true
+		}).then((categories, err)=>{
+			if(err){
+				console.log("err" + err)
+
+			}else{
+				console.log(categories)
+				res.json(categories)
+			}		
+		})
+	}
+}
+
 
 
 		// models.brands.findAll({
@@ -60,28 +77,25 @@ module.exports={
 		// 	}		
 		// })
 
-	},
+// 	},
 
 
-	createProduct:(req, res)=>{
-		console.log("controllers/createProduct");
-		console.log(req.body)
-		models.products.create({
-			name:req.body.name,
-			desc:req.body.desc,
-			price:req.body.price,
-			brandId: req.body.brandId
-		}
-		).then(function(record) {
-//			console.log(record)
-    	 		})
+// 	createProduct:(req, res)=>{
+// 		console.log("controllers/createProduct");
+// 		console.log(req.body)
+// 		models.products.create({
+// 			name:req.body.name,
+// 			desc:req.body.desc,
+// 			price:req.body.price,
+// 			brandId: req.body.brandId
+// 		}
+// 		).then(function(record) {
+// //			console.log(record)
+//     	 		})
   	
-		res.json(true);
-	},
+// 		res.json(true);
+// 	},
 	
 
 
-
-
-}
 
