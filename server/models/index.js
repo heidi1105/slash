@@ -14,9 +14,7 @@ let sequelize = new Sequelize('slash', 'root', 'root', {
 var models_path = path.join(__dirname, '../models');
 
 let models = [
-
-	'brands', 'products'
-//	, 'orders','order_items','categories', 'products_pic', 'promotions', 'restrictions', 'shipments', 'users'
+	'brands', 'products', 'orders','order_items','categories', 'products_pic', 'promotions', 'restrictions', 'shipments', 'users'
 	]
 models.forEach(function(model) {
 //  module.exports[model] = sequelize.import(__dirname + '/' + model);

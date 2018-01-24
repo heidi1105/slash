@@ -7,7 +7,15 @@ module.exports=(sequelize, DataTypes)=>{
 	})
 	products.associate=function(models){
 	models.products.belongsTo(models.brands, {
-		onDelete: "CASCADE"})
+		onDelete: "CASCADE"}),
+	models.products.belongsTo(models.categories, {
+		onDelete: "CASCADE"}),
+
+	models.products.hasMany(models.products_pic),
+	models.products.hasMany(models.restrictions),
+	models.products.hasMany(models.order_items)
+
+
 	}
 	return products;
 }

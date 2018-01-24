@@ -34,15 +34,15 @@ module.exports={
 
 	getBrands:(req, res)=>{
 		console.log("controllers/getting brands")
-		models.products.findAll({
+		models.brands.findAll({
 //			include:[{model:models.brands}],
 			raw:true
-		}).then((err, brands)=>{
-			console.log("getting brands")
+		}).then((brands, err)=>{
 			if(err){
-				console.log(err)
+				console.log("err" + err)
+
 			}else{
-				console.log(brands);
+				console.log("succes" + brands);
 				res.json(brands)
 			}		
 		})
