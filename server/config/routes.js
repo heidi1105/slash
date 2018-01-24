@@ -6,12 +6,12 @@ let upload = multer({dest:'upload/'})
 
 module.exports = (app)=>{
 	app.get('/', User.home);
-	app.get('/login', User.login);
-	app.post('/createBrand', Admin.createBrand);
-	app.get('/getBrands', User.getBrands);
-	app.post('/createCategory', Admin.createCategory);
-	app.get('/getCategories', User.getCategories);
-	app.post('/createProduct', Admin.createProduct);
+	app.get('/api/ogin', User.login);
+	app.post('/api/createBrand', Admin.createBrand);
+	app.get('/api/getBrands', User.getBrands);
+	app.post('/api/createCategory', Admin.createCategory);
+	app.get('/api/getCategories', User.getCategories);
+	app.post('/api/createProduct', Admin.createProduct);
 
 	app.all("*", (req,res,next) => {
     res.sendFile(path.resolve("./public/dist/index.html"))
