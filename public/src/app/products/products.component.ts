@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
 	allProducts: object[] = [];
 	currentUser:string;
   constructor(private _slashService: SlashService, private _router: Router,
-	private _route: ActivatedRoute) { }
+	private _route: ActivatedRoute) {}
 
   ngOnInit() {
 		this.getProducts();
@@ -46,4 +46,8 @@ export class ProductsComponent implements OnInit {
 			console.log("currentuser",data._id)
 		})
 	}
+	onShow(pID) {
+    console.log('onShow()', pID);
+    this._router.navigate(['product   ', pID])
+  }
 }
