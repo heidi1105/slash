@@ -6,7 +6,7 @@ let upload = multer({dest:'upload/'})
 
 module.exports = (app)=>{
 	app.get('/', User.home);
-	app.get('/api/ogin', User.login);
+	app.get('/api/login', User.login);
 	app.post('/api/createBrand', Admin.createBrand);
 	app.get('/api/getBrands', User.getBrands);
 	app.post('/api/createCategory', Admin.createCategory);
