@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   newProduct: object={name:"", desc:"", price:0, brandId:1, categoryId:1, thumbnail:""}
   newCategory: object={name:""}
   categories:object[]=[]
-  newPicUrl:object={productId:1, pic_url:""; pic_alt:"slash"}
+  newPicUrl:object={productId:1, pic_url:"", pic_alt:"slash"}
 
 
   constructor(private _adminService:AdminService, private _router:Router) { }
