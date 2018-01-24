@@ -29,15 +29,18 @@ export class SlashService {
 		return this._http.post('/createBrand', newBrand).map(Response=>Response.json()).toPromise()
 	}
 
+	createProduct(newProduct){
+		console.log("in service/newProduct")
+		return this._http.post('/createProduct', newProduct).map(Response=>Response.json()).toPromise()
+	}
+
+
+
 	getBrands(){
 		console.log("service/getbrands")
 		return this._http.get('/getBrands').map(Response=>Response.json()).toPromise()
 	}
 
-	createProduct(newProduct){
-		console.log("in service/newProduct")
-		return this._http.post('/createProduct', newProduct).map(Response=>Response.json()).toPromise()
-	}
 
 
 }

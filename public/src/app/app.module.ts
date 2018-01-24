@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SlashService } from './slash.service'
+import { AdminService } from './admin.service'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +35,7 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     HttpModule
   ],
-  providers: [SlashService],
+  providers: [SlashService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

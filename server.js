@@ -4,6 +4,8 @@ let path = require('path');
 let bodyParser = require('body-parser')
 let sequelize = require('sequelize')
 let session = require('express-session');
+let multer = require('multer');
+let upload = multer({dest:'upload/'})
 
 let config = {
 	secret: "SlashIsTheBest",
