@@ -21,81 +21,18 @@
 	</div>
 </nav>
 
+
+<!-- Wanted to add the description in the modal with the button to add to cart -->
 <section class="products">
-
-	<div class="product-card" >
+	<div class="product-card" *ngFor="let product of allProducts; let idx=index">
 		<div class="product-image">
-			<img src="../../assets/img/mayu.jpg">
+			<img src="{{product.image}}">
 		</div>
 		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>MAYU MASK SHEET</h5>
-			<h6>$4.20</h6>
-		</div>
-	</div>
-
-	<div class="product-card">
-		<div class="product-image">
-			<img src="../../assets/img/ROSE.png">
-		</div>
-		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>ROSE MASK SHEET</h5>
-			<h6>$4.20</h6>
-		</div>
-	</div>
-
-	<div class="product-card">
-		<div class="product-image">
-			<img src="../../assets/img/red.png">
-		</div>
-		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>RED-GINSENG MASK SHEET</h5>
-			<h6>$4.20</h6>
-		</div>
-	</div>
-
-	<div class="product-card">
-		<div class="product-image">
-			<img src="../../assets/img/mayu.jpg">
-		</div>
-		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>MAYU MASK SHEET</h5>
-			<h6>$4.20</h6>
-		</div>
-	</div>
-
-	<div class="product-card">
-		<div class="product-image">
-			<img src="../../assets/img/ROSE.png">
-		</div>
-		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>ROSE MASK SHEET</h5>
-			<h6>$4.20</h6>
-		</div>
-	</div>
-
-	<div class="product-card">
-		<div class="product-image">
-			<img src="../../assets/img/red.png">
-		</div>
-		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>RED-GINSENG MASK SHEET</h5>
-			<h6>$4.20</h6>
-		</div>
-	</div>
-	<div class="product-card">
-		<div class="product-image">
-			<img src="../../assets/img/mayu.jpg">
-		</div>
-		<div class="product-info">
-			<h5>WONDER TREE</h5>
-			<h5>MAYU MASK SHEET</h5>
-			<h6>$4.20</h6>
+			<h5>{{product.brand}}</h5>
+			<h5>{{product.name}}</h5>
+			<h6>{{car.price | currency:USD:symbol}}</h6>
+			<button (click)="toCart(idx)">Add To Cart</button>
 		</div>
 	</div>
 </section>

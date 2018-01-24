@@ -1,45 +1,57 @@
-<form (submit)="createBrand()" #brandForm="ngForm">
-	<h1> Create a brand </h1>
-	<p> *Brand name:  
-		<input type="text" name ="name" required minlength="2" 
-		[(ngModel)]="newBrand.name" #name="ngModel" > </p>
-		<p *ngIf=" name.invalid"> Brand name is required </p>
-		<p> Description: 
-		<input type="text" name ="desc" 
-		[(ngModel)]="newBrand.desc" #name="ngModel" > </p>
-		<p> *Region: 
-		<input type="text" name ="desc" required minlength="2" 
-		[(ngModel)]="newBrand.region" #name="ngModel" > </p>		
-	<button type="submit"> Create Brand </button>
-</form>
+<div class="wrapper">
+	<div id="brand">
+		<h3> Create a brand </h3>
+		<form (submit)="createBrand()" #brandForm="ngForm">
+				<input type="text"
+				name ="name"
+				placeholder="*Brand Name"
+				required
+				minlength="2"
+				[(ngModel)]="newBrand.name"
+				#name="ngModel">
+				<p  class="error" *ngIf=" name.invalid && !name.pristine"> Brand name is required </p>
+				<input type="text"
+				name="desc"
+				placeholder="Description"
+				[(ngModel)]="newBrand.desc"
+				#name="ngModel">
+				<input type="text"
+				name="desc"
+				placeholder="Region"
+				required
+				minlength="2"
+				[(ngModel)]="newBrand.region"
+				#name="ngModel" >
+			<button class="btn" type="submit"> Create Brand </button>
+		</form>
+	</div>
 
-<form (submit)="createProduct()" #productForm="ngForm">
-	<h1> Create a product </h1>
-	<p> *Brand </p>
-
-	<select name="brandId" [(ngModel)]="newProduct.brandId" #brandId="ngModel" >
-
-		<option *ngFor=" let brand of brands" value={{brand.id}}> {{brand.name}} </option>
-	</select>
-
-	<p> *Product name:  
-		<input type="text" name ="name" required minlength="2" 
-		[(ngModel)]="newProduct.name" #name="ngModel" > </p>
-		<p> Description: 
-		<input type="text" name ="desc" 
-		[(ngModel)]="newProduct.desc" #name="ngModel" > </p>
-		<p> Price: 
-		<input type="number" name ="price" required  
-		[(ngModel)]="newProduct.price" #name="ngModel" > </p>
-
-
-	<button type="submit"> Create Products </button>
-</form>
-
-
-
-
-
-
-
-
+	<div id="Product">
+		<h3>Create a Product</h3>
+		<form (submit)="createProduct()" #productForm="ngForm">
+			<select name="brandId"
+				placeholder="Brand"
+				[(ngModel)]="newProduct.brandId" #brandId="ngModel">
+				<option *ngFor=" let brand of brands" value={{brand.id}}> {{brand.name}} </option>
+			</select>
+				<input type="text"
+				name ="name"
+				placeholder="Product Name"
+				required
+				minlength="2"
+				[(ngModel)]="newProduct.name"
+				#name="ngModel">
+				<input type="text"
+				name="desc"
+				placeholder="Description"
+				[(ngModel)]="newProduct.desc"
+				#name="ngModel">
+				<input type="number"
+				name="price"
+				placeholder="Price"
+				required
+				[(ngModel)]="newProduct.price" #name="ngModel" >
+			<button class="btn" type="submit">Create Products</button>
+		</form>
+	</div>
+</div>
