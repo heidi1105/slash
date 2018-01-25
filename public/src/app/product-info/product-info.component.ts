@@ -11,32 +11,32 @@ import * as $ from 'jquery/dist/jquery.min.js';
 export class ProductInfoComponent implements OnInit {
 	product:object;
   constructor(private _slashService: SlashService, private _router: Router,
-	private _route: ActivatedRoute) { 
+	private _route: ActivatedRoute) {
    	      this._route.paramMap.subscribe( params => {
    	      		this.getOneProduct(params.get('id'));
-
-
-
        	       console.log(params.get('id'));
    	      })
 
   }
 
   ngOnInit() {
+			$('#thumbs').delegate('img','click', function(){
+    	$('#largeImage').attr('src',$(this).attr('src'));
+		});
 
   }
 
   getOneProduct(id){
-  	this._slashService.getOneProduct()
-		.then((product)=>{
-			this.product = product;
-		})
-		.catch((err)=>{
-			console.log(err)
-		})
+  	// this._slashService.getOneProduct()
+		// .then((product)=>{
+		// 	this.product = product;
+		// })
+		// .catch((err)=>{
+		// 	console.log(err)
+		// })
 	}
 
 
 
 
-
+}
