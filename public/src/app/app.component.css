@@ -35,7 +35,7 @@
 }
 .navLinks{
 	color: black;
-	padding: 0 15px;
+	padding: 0 25px;
 	text-decoration: none;
 	font-size: 1em;
 }
@@ -145,6 +145,7 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+		font-weight: 700;
 		text-decoration: none !important;
 	}
 	.nav.responsive a {
