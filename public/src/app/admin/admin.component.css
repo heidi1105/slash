@@ -38,6 +38,15 @@ input{
 	font-size: .9em;
 	width: 90%;
 }
+
+textarea{
+	display:block;
+	margin: 10px auto;
+	font-size: .9em;
+	width: 90%;
+	font-family: 'Lato', sans-serif;
+}
+
 input::-webkit-input-placeholder {
 	font-family: 'Lato', sans-serif;
 }
@@ -67,6 +76,8 @@ select {
 select::-ms-expand {
     display: none; /* hide the default arrow in ie10 and ie11 */
 }
+
+
 .btn{
 	background: #333;
 	border-radius: 0;

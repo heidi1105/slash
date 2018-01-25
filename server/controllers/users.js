@@ -41,10 +41,29 @@ module.exports={
 				console.log("err" + err)
 
 			}else{
+
 				res.json(brands)
 			}		
 		})
 	},
+
+	getProducts:(req, res)=>{
+		console.log("controllers/getting products")
+		models.products.findAll({
+//			include:[{model:models.brands}],
+			raw:true
+		}).then((products, err)=>{
+			if(err){
+				console.log("err" + err)
+
+			}else{
+				console.log(products)
+				res.json(products)
+			}		
+		})
+	},
+
+
 
 	getCategories:(req, res)=>{
 		console.log("controllers/getting categories")

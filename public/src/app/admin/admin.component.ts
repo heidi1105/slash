@@ -21,11 +21,13 @@ export class AdminComponent implements OnInit {
     getBrands(){
       console.log("component/getBrands")
       this._adminService.getBrands()
-      .then((data)=>{
+      .then((data)=>{        
       this.brands=data;
+      console.log(data)
     })
     .catch((err)=>{
       console.log("catch err")
+
     })
   }
 
