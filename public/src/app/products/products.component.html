@@ -24,15 +24,19 @@
 
 <!-- Wanted to add the description in the modal with the button to add to cart -->
 <section class="products">
-	<div class="product-card" *ngFor="let product of products; let idx=index">
-		<div class="product-image">
-			<img src="{{product.thumbnail}}">
+	<div class="product-card" *ngFor="let product of allProducts">
+	<a [routerLink]="['/products', product.id]">
+
+		<div class="product-image" >
+			<img src="{{product.thumbnail}}" alt="{{product.name}}" >
 		</div>
 		<div class="product-info">
-			<h5>{{product.brand}}</h5>
+			<h5>{{product.brandName}}</h5>
 			<h5>{{product.name}}</h5>
-			<h6>{{car.price | currency:USD:symbol}}</h6>
+			<h6>{{product.price | currency:HKD:symbol}}</h6>
 			<button (click)="toCart(idx)">Add To Cart</button>
 		</div>
+	</a>
 	</div>
+
 </section>

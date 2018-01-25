@@ -49,10 +49,9 @@ module.exports={
 
 	getProducts:(req, res)=>{
 		console.log("controllers/getting products")
-		models.products.findAll({
-//			include:[{model:models.brands}],
-			raw:true
-		}).then((products, err)=>{
+		models.sequelize.query("SELECT p.id as id, p.name as name, p.price as price, p.thumbnail as thumbnail, b.id as brandId, b.name as brandName FROM products p INNER JOIN brands b ON b.id = p.brandId"
+			,{ bind: ['active'], type: models.sequelize.QueryTypes.SELECT })
+		.then((products, err)=>{
 			if(err){
 				console.log("err" + err)
 
@@ -63,7 +62,19 @@ module.exports={
 		})
 	},
 
+	getOneProduct:(req, res)=>{
+		console.log("controllers/getting products")
+		models.product.findById()
+		.then((products, err)=>{
+			if(err){
+				console.log("err" + err)
 
+			}else{
+				console.log(products)
+				res.json(products)
+			}		
+		})
+	},
 
 	getCategories:(req, res)=>{
 		console.log("controllers/getting categories")
