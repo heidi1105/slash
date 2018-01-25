@@ -27,7 +27,7 @@ export class ProductInfoComponent implements OnInit {
   }
 
   getOneProduct(id){
-  	this._slashService.getOneProduct()
+  	this._slashService.getOneProduct(id)
 		.then((product)=>{
 			this.product = product;
 		})
@@ -36,7 +36,7 @@ export class ProductInfoComponent implements OnInit {
 		})
 	}
 
-
+})
 
 
 

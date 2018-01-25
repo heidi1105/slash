@@ -54,7 +54,7 @@ export class SlashService {
 
 	getOneProduct(id){
 		console.log("in service/getOneProduct")
-		return this._http.get('/api/getOneProduct').map(Response=>Response.json()).toPromise();
+		return this._http.get('/api/product/'+id).map(Response=>Response.json()).toPromise();
 	}
 
 	toCart(product){

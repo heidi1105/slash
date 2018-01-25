@@ -63,8 +63,8 @@ module.exports={
 	},
 
 	getOneProduct:(req, res)=>{
-		console.log("controllers/getting products")
-		models.product.findById()
+		console.log("controllers/getting product"+req.params)
+		models.product.findById(req.params)
 		.then((products, err)=>{
 			if(err){
 				console.log("err" + err)
