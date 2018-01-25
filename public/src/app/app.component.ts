@@ -17,8 +17,6 @@ export class AppComponent implements OnInit, DoCheck {
 	}
 	ngOnInit(){
 		$(".icon").on("click", function() {
-
-			console.log($(this).text());
 			if($(this).text()==="\u2715"){
 				$(this).text("\u2630")
 			}else{
