@@ -29,9 +29,11 @@ export class ProductInfoComponent implements OnInit {
   getOneProduct(id){
   	this._slashService.getOneProduct(id)
 		.then((product)=>{
+			console.log("component/getting product")
 			this.product = product;
 		})
 		.catch((err)=>{
+			console.log("err")
 			console.log(err)
 		})
 
