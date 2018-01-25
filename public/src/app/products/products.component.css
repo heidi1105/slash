@@ -18,17 +18,18 @@ h6 {
 /* Product Layout */
 
 .product-filter {
-	display: flex;
-	padding: 10px 10px;
+	display: absolute;
+	padding: 10px 10px 0 5px;
+	left: 50%;
 }
 
 .sort {
-	display: flex;
+	display: inline;
 	align-self:flex-start;
 }
 
 .collection-sort {
- display: flex;
+ display: inline;
  flex-direction: column;
 }
 
@@ -57,15 +58,16 @@ select::-ms-expand {
 }
 .products{
 	text-align: left;
-	padding: 2% 0 2% 2%;
+	padding: 2% 0 2%  4%;
 	width: auto;
 }
 .product-card{
 	font-size: 1rem;
 	display: inline-block;
-	width: 20%;
+	width: 30%;
 	height: 450px;
-	padding: 2%;
+	margin: auto;
+	padding: 1%;
 	vertical-align:top;
 	text-align: center;
 	cursor: pointer;
