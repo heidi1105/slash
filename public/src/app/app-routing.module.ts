@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { AdminComponent } from './admin/admin.component';
-
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 const routes: Routes = [
 {
@@ -44,6 +44,14 @@ const routes: Routes = [
 {
 	path: 'admin',
 	component: AdminComponent
+},
+{
+	path: 'products/:id',
+	component: ProductInfoComponent
+},
+{
+	path: '**',
+	redirectTo: 'home'
 }
 
 

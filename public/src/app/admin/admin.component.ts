@@ -17,7 +17,7 @@ export class AdminComponent implements OnInit {
 
 
   constructor(private _adminService:AdminService, private _router:Router) { }
-    
+
     getBrands(){
       console.log("component/getBrands")
       this._adminService.getBrands()
@@ -44,7 +44,7 @@ export class AdminComponent implements OnInit {
 
 
 
-  ngOnInit() { 
+  ngOnInit() {
     this.getBrands();
     this.getCategories();
   }
@@ -104,7 +104,7 @@ export class AdminComponent implements OnInit {
   //     console.log("catch err")
   //     console.log(err)
   //   })
-  // } 
+  // }
   // }
 
 
