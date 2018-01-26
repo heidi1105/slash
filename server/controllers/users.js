@@ -63,14 +63,17 @@ module.exports={
 	},
 
 	getOneProduct:(req, res)=>{
-		console.log("controllers/getting products")
-		models.product.findById()
+
+		console.log("controllers/getting product"+req.params.id)
+		models.products.findOne({
+			where: {id:req.params.id},
+			raw:true
+		})
 		.then((products, err)=>{
 			if(err){
 				console.log("err" + err)
 
 			}else{
-				console.log(products)
 				res.json(products)
 			}		
 		})

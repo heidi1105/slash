@@ -1,7 +1,7 @@
 <div class="container">
 	<div id="gallery">
 		<div id="panel">
-			<img id="largeImage" src="../../assets/img/ROSE.jpg" />
+			<img id="largeImage" src={{product.thumbnail}} />
 		</div>
 		<div id="thumbs">
 			<span class="prev"><</span>
@@ -12,7 +12,8 @@
 			<span id="next">></span>
 		</div>
 		<div id="info">
-			<p>$4.20</p>
+			<p>{{product.price}}</p>
+
 			<button type="button" name="button">Add to Cart</button>
 		</div>
 	</div>
@@ -20,8 +21,9 @@
 
 
 	<div id="desc">
-		<h2>ROSE MASK SHEET</h2>
+		<h1>{{product.name}}</h1>
 			<p>Rose extract has excellent skin soothing and cleansing properties. Our skin is exhausted daily by the stressful and harmful environment. The rose mask will provide softness and resilience for your skin, hydrating your skin with nutrition. Washing off after the process is not necessary. Its concentrated extract and essence are rapidly absorbed into your skin, leaving you a stable and comfortable after effect.</p>
+
 		<p>Our mask sheets are made of 100% natural materials</p>
 		<p>8 MASKS AND ROSE TONER</p>
 		<p>2 STEP NUTRITION BEAUTY PROCESS</p>

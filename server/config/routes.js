@@ -10,7 +10,7 @@ module.exports = (app)=>{
 	app.post('/api/createBrand', Admin.createBrand);
 	app.get('/api/getBrands', User.getBrands);
 	app.get('/api/getProducts', User.getProducts);
-	app.get('/api/getOneProduct', User.getOneProduct);
+	app.get('/api/getProduct/:id', User.getOneProduct);
 	app.post('/api/createCategory', Admin.createCategory);
 	app.get('/api/getCategories', User.getCategories);
 	app.post('/api/createProduct', Admin.createProduct);
