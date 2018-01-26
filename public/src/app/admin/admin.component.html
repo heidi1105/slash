@@ -66,9 +66,9 @@
 				[(ngModel)]="newProduct.name"
 				#name="ngModel">
 
-				<textarea name="desc" placeholder="Description" 
+				<textarea name="desc" placeholder="Description"
 				[(ngModel)]="newProduct.desc"
-				#name="ngModel">					
+				#name="ngModel">
 				</textarea>
 
 				<input type="number"
@@ -77,10 +77,10 @@
 				required
 				[(ngModel)]="newProduct.price" #name="ngModel" >
 
-				<input type="text" 
-				name ="thumbnail" 
-				placeholder="thumbnail"  
-				[(ngModel)]="newProduct.thumbnail" #thumbnail="ngModel" > 
+				<input type="text"
+				name ="thumbnail"
+				placeholder="thumbnail"
+				[(ngModel)]="newProduct.thumbnail" #thumbnail="ngModel" >
 
 
 			<button class="btn" type="submit">Create Products</button>
@@ -92,9 +92,9 @@
 
 
 
-<form (submit)="createProduct()" #productForm="ngForm">
+<!-- <form (submit)="createProduct()" #productForm="ngForm">
 	<h1> Create a product </h1>
-	<p> *Brand 
+	<p> *Brand
 	<select name="brandId" [(ngModel)]="newProduct.brandId" #brandId="ngModel" >
 	<option *ngFor=" let brand of brands" value={{brand.id}}> {{brand.name}} </option>
 	</select></p>
@@ -102,53 +102,53 @@
 	<p> *Category
 	<select name="categoryId" [(ngModel)]="newProduct.categoryId" #categoryId="ngModel" >
 	<option *ngFor=" let category of categories" value={{category.id}}> {{category.name}} </option>
-	</select></p>	
+	</select></p>
 
 
-	<p> *Product name:  
-		<input type="text" name ="name" required minlength="2" 
+	<p> *Product name:
+		<input type="text" name ="name" required minlength="2"
 		[(ngModel)]="newProduct.name" #name="ngModel" > </p>
-		<p> Description: 
-		<input type="textarea" name ="desc" 
+		<p> Description:
+		<input type="textarea" name ="desc"
 		[(ngModel)]="newProduct.desc" #desc="ngModel" > </p>
-		<p> Price: 
-		<input type="number" name ="price" required  
+		<p> Price:
+		<input type="number" name ="price" required
 		[(ngModel)]="newProduct.price" #price="ngModel" > </p>
 
-		<p> Thumbnail: 
-		<input type="text" name ="thumbnail"   
+		<p> Thumbnail:
+		<input type="text" name ="thumbnail"
 		[(ngModel)]="newProduct.thumbnail" #thumbnail="ngModel" > </p>
 
 	<button type="submit"> Create Products </button>
-</form>
+</form> -->
 
 <!-- 	<form (submit)="uploadPic()">
 		<p> Product pictures upload:
-		<input type="file" name="uploads" 
+		<input type="file" name="uploads"
 		[(ngModel)]="new.uploads" #uploads="ngModel" ></p>
 	</form>
 
 <!-- <!--  -->
-<!-- 
+<!--
 <form (submit)="createBrand()" #brandForm="ngForm">
 	<h1> Create a brand </h1>
-	<p> *Brand name:  
-		<input type="text" name ="name" required minlength="2" 
+	<p> *Brand name:
+		<input type="text" name ="name" required minlength="2"
 		[(ngModel)]="newBrand.name" #name="ngModel" > </p>
 		<p *ngIf=" name.invalid"> Brand name is required </p>
-		<p> Description: 
-		<input type="text" name ="desc" 
+		<p> Description:
+		<input type="text" name ="desc"
 		[(ngModel)]="newBrand.desc" #desc="ngModel" > </p>
-		<p> *Region: 
-		<input type="text" name ="desc" required minlength="2" 
-		[(ngModel)]="newBrand.region" #region="ngModel" > </p>		
+		<p> *Region:
+		<input type="text" name ="desc" required minlength="2"
+		[(ngModel)]="newBrand.region" #region="ngModel" > </p>
 	<button type="submit"> Create Brand </button>
 </form>
 
 <form (submit)="createCategory()" #categoryForm="ngForm">
 	<h1> Create a Category </h1>
-	<p> *Category name:  
-		<input type="text" name ="name" required minlength="2" 
+	<p> *Category name:
+		<input type="text" name ="name" required minlength="2"
 		[(ngModel)]="newCategory.name" #name="ngModel" > </p>
 		<p *ngIf=" name.invalid"> Category name is required </p>
 	<button type="submit"> Create Category </button>
@@ -159,7 +159,7 @@
 	<p> *Product
 	<select name="productId" [(ngModel)]="newPic.productId" #productId="ngModel" >
 	<option *ngFor=" let product of products" value={{product.id}}> {{product.name}} </option>
-	</select></p>	
+	</select></p>
 	<p> img url:
 		<input type="text" name="pic_url" [(ngModel)]="newPic.pic_url" #pic_url="ngModel" >	</p>
 	<p> img description:
@@ -168,4 +168,4 @@
 </form>
 
 
- --> 
+ -->

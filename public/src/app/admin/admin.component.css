@@ -12,14 +12,7 @@
 	padding: 1em;
 	font-size: 1.5em;
 }
-#Product {
-	grid-column: 1 / 2;
-	grid-row: 1 ;
-}
-#reg {
-	grid-column: 2 / 2;
-	grid-row: 1;
-}
+
 h2{
 	padding: 0;
 	margin: 0;
@@ -107,14 +100,14 @@ select::-ms-expand {
 	.wrapper h3{
 		margin: 0;
 	}
-	#brand{
+	/* #brand{
 		grid-column: 1 / 1;
 		grid-row: 1;
 	}
 	#Product {
 		grid-column: 1 / 1;
 		grid-row: 2;
-	}
+	} */
 	.btn{
 		width: 50%;
 	}
