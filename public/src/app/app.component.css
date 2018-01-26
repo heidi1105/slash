@@ -112,6 +112,17 @@
 	}
 	.container{
 		height: 80%;
+		overflow: scroll;
+	}
+	.bottom{
+		height: 100px;
+	}
+}
+@media only screen and (max-height : 500px){
+
+	.container{
+		height: 80%;
+		overflow: scroll;
 	}
 	.bottom{
 		height: 100px;
