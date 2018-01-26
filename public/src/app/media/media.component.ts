@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery/dist/jquery.min.js';
 
 @Component({
   selector: 'app-media',
@@ -10,6 +11,7 @@ export class MediaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+		
   }
 
 }

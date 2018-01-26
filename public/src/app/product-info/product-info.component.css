@@ -50,3 +50,41 @@
 #desc p{
 	margin: auto;
 }
+span{
+	padding: 0;
+	margin: 0;
+}
+@media only screen and (max-width : 700px){
+	.container{
+		padding: 0;
+		margin: 0;
+		text-align:center;
+	}
+	#gallery{
+		width: 100%;
+		position: relative;
+		margin: auto;
+	}
+	#panel{
+		object-fit: contain;
+		padding: 5% 0;
+		height: 250px;
+	}
+	#desc{
+		max-width: 90%;
+		position: relative;
+		margin: auto;
+		padding: 0;
+	}
+	p{
+		width: 100%;
+	}
+	#thumbs{
+		width: 98%;
+		margin: auto;
+	}
+	#thumbs img{
+		max-width: 100%;
+		margin: 0;
+	}
+}
