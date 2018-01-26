@@ -23,10 +23,10 @@ export class ProductInfoComponent implements OnInit {
 		$('#thumbs').delegate('img','click', function(){
   		$('#largeImage').attr('src',$(this).attr('src'));
 		});
-		// $('#next').click(function(){
-    //   $(this).prev().find('.thumbnail').trigger('click')
-		// console.log($(this).prev().find('.thumbnail').trigger('delegate'));
-		// });
+		$('#next').click(function(){
+      $(this).prev().find('.thumbnail').trigger('click')
+		console.log($(this).prev().find('.thumbnail').trigger('delegate'));
+		});
   }
 
   getOneProduct(id){
