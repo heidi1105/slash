@@ -7,9 +7,7 @@
 			<a [routerLink]="['products']" class="navLinks">Shop Brands</a>
 
 			<div class="dropdown-content">
-				<a href="#" class="navLinks">Link 1</a>
-				<a href="#" class="navLinks">Link 2</a>
-				<a href="#" class="navLinks">Link 3</a>
+				<a [routerLink]="['products']" class="navLinks" *ngFor=" let brand of brands" > {{brand.name}} </a>
 			</div>
 
 		</div>
