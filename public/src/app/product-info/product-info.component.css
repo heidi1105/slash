@@ -54,12 +54,17 @@ span{
 	padding: 0;
 	margin: 0;
 }
+button{
+	border: 1px solid #333;
+	padding: 5px 10px;
+	text-transform: uppercase;
+}
 @media only screen and (max-height : 600px){
 	#gallery{
 		height: 85%;
 	}
 	#desc{
-		padding-top: 0; 
+		padding-top: 0;
 	}
 }
 @media only screen and (max-width : 700px){
