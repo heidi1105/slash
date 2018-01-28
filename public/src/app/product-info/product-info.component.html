@@ -1,20 +1,27 @@
 <div class="container">
+	<h1> Working </h1>
 	<div id="gallery">
 		<div id="panel">
-			<img id="largeImage" src={{product.thumbnail}} />
+<!-- 			<img id="largeImage" src={{product.thumbnail}} /> -->
 		</div>
 		<div id="thumbs">
 			<span class="prev"><</span>
-			<img class="thumbnail" src="../../assets/img/ROSE_.jpg" alt="1st image description" />
-			<img class="thumbnail" src="../../assets/img/ROSE.png" alt="2nd image description" />
-			<img class="thumbnail" src="../../assets/img/red.png" alt="3th image description" />
-			<img  class="thumbnail" src="../../assets/img/ROSE.jpg" alt="4th image description" />
+
+
 			<span id="next">></span>
 		</div>
 		<div id="info">
-			<p>{{product.price}}</p>
+			<p>price: </p>
 
-			<button type="button" name="button">Add to Cart</button>
+			<form (submit)="addItem()" #addItemForm="ngForm">
+			<p> Quantity :
+				<input type="number" name="quantity"
+				[(ngModel)]="newItem.quantity" #quantity="ngModel" ></p>	
+
+				<p>
+			<button type="submit" name="button">Add to Cart</button>
+	</p>
+</form>
 		</div>
 	</div>
 

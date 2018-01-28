@@ -10,12 +10,14 @@ import * as $ from 'jquery/dist/jquery.min.js';
 })
 export class AppComponent implements OnInit, DoCheck {
 	session: any;
+	brands: object[]=[];
 
 	constructor(private _slashService: SlashService, private _router: Router,
 	private _route: ActivatedRoute){
 		this.session = sessionStorage.getItem('session');
 	}
 	ngOnInit(){
+		this.getBrands();
 		$(".icon").on("click", function() {
 			if($(this).text()==="\u2715"){
 				$(this).text("\u2630")
@@ -23,6 +25,18 @@ export class AppComponent implements OnInit, DoCheck {
 				$(this).text("\u2715");
 			}});
 	}
+
+    getBrands(){
+      this._slashService.getBrands()
+      .then((data)=>{       
+      this.brands=data;
+    })
+    .catch((err)=>{
+      console.log("catch err")
+
+    })
+  }
+
 
 	ngDoCheck(){
 		this.session = sessionStorage.getItem('session');

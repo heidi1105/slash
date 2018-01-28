@@ -3,7 +3,6 @@ let config = {secret:"SlashIsTheBest"};
 let express = require('express');
 let models = require('../models');
 
-
 //let models = require('./models');
 
 
@@ -17,6 +16,11 @@ module.exports={
 	login:(req, res)=>{
 		console.log("in login");
 		res.json(true)
+	},
+
+	getCurrentUser:(req, res)=>{
+		console.log("controllers/getting current user")
+		res.json(true);
 	},
 
 	// createBrand:(req, res)=>{
@@ -56,7 +60,6 @@ module.exports={
 				console.log("err" + err)
 
 			}else{
-				console.log(products)
 				res.json(products)
 			}		
 		})
@@ -93,8 +96,46 @@ module.exports={
 				res.json(categories)
 			}		
 		})
+	},
+
+	getCart:(req, res)=>{
+		console.log("controllers/getCart1")
+		if (!req.session.order){
+			console.log("creating session.order")
+			req.session.order=[];
+		}else{
+			console.log("controllers/getCart2")
+			console.log(req.session.order)
+			res.json(req.session.order)
+		}
+	},
+
+	addItem:(req, res)=>{
+		let order=[];
+		if (!req.session.order){
+			req.session.order=[]
+		}
+		order=req.session.order;
+
+		for (var i =0; i<order.length; i++){
+			if (order[i]["productId"]===req.body.productId){
+				order[i]["quantity"]=order[i]["quantity"]+req.body.quantity;
+//				order[i]={productId:req.body.productId, quantity:req.session.order[i]["quantity"]+req.body.quantity}
+				req.session.order=order;
+
+				res.json(order)
+			}
+		}
+		order.push(req.body);
+		req.session.order=order;
+		res.json(order)
 	}
+
+
+
 }
+
+
 
 
 
