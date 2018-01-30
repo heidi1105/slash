@@ -1,105 +1,62 @@
 #thumbs {
-	width: 100%;
-	height: 20%;
-	position: relative;
-	padding-top: 1%;
-	display: flex;
+	width: 22%;
+	height: 150px;
+	display: inline-block;
+	float: left;
 	justify-content: space-between;
 	/* background: linear-gradient(180deg, rgba(224,224,224,.2),rgba(255,255,255,.3), rgba(255,255,255,.4)); */
-}
-#largeImage {
-	cursor: pointer;
-	max-width:100%;
-	max-height:100%;
 }
 #thumbs img {
 	max-width: 100%;
 	height: 100px;
 	margin: 0 auto;
 	cursor: pointer;
+	display: block;
 }
 #thumbs img:hover {
 	opacity: .7;
 }
-#panel {
-	width: 100%;
-	height: 50%;
-	padding: 4% 0;
-	vertical-align: top;
+.container {
+  max-width: 100%;
+  margin: 40px 3%;
 }
-#gallery{
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 40%;
-	height: 65%;
-	position: absolute;
-	overflow: hidden;
+
+.container > div {
+  border-radius: 5px;
+  padding: 1em;
+
+}.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  grid-auto-rows: minmax(450px, auto);
+}
+.gallery {
+  grid-column: 1 / 2;
+  grid-row: 1 ;
+}
+.desc {
+  grid-column: 2 / 2;
+  grid-row: 1;
+}
+#panel{
+	text-align: center;
+	width: 78%;
+	display: inline-block;
+}
+#largeImage{
+	width: 150px;
+
+}
+#largeImage img{
+	max-width: 100%;
+	max-height: 100%;
 }
 #info{
-	width: 100%;
-	height: 20%;
-}
-#desc{
-	position: absolute;
-	right: 0;
-	max-width: 55%;
-	max-height: 65%;
-	padding: 3% 2% 3% 2%;
-	text-align: left;
-}
-#desc p{
-	margin: auto;
-}
-span{
-	padding: 0;
-	margin: 0;
-}
-button{
-	border: 1px solid #333;
-	padding: 5px 10px;
-	text-transform: uppercase;
+	display: block;
+	margin-left: 19%;
 }
 @media only screen and (max-height : 600px){
-	#gallery{
-		height: 85%;
-	}
-	#desc{
-		padding-top: 0;
-	}
 }
 @media only screen and (max-width : 700px){
-	.container{
-		padding: 0;
-		margin: 0;
-		text-align:center;
-	}
-	#gallery{
-		width: 100%;
-		position: relative;
-		margin: auto;
-	}
-	#panel{
-		object-fit: contain;
-		padding: 5% 0;
-		height: 250px;
-	}
-	#desc{
-		max-width: 90%;
-		position: relative;
-		margin: auto;
-		padding: 0;
-		max-height: 40%;
-		z-index: -9;
-	}
-	p{
-		width: 100%;
-	}
-	#thumbs{
-		width: 98%;
-		margin: auto;
-	}
-	#thumbs img{
-		max-width: 100%;
-		margin: 0;
-	}
 }

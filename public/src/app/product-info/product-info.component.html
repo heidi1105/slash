@@ -1,34 +1,33 @@
 <div class="container">
-	<h1> Working </h1>
 	<div id="gallery">
-		<div id="panel">
-<!-- 			<img id="largeImage" src={{product.thumbnail}} /> -->
-		</div>
 		<div id="thumbs">
-			<span class="prev"><</span>
-
-
-			<span id="next">></span>
+			<img src="../../assets/img/ROSE.jpg" alt="">
+			<img src="{{product.thumbnail}}" alt="">
+			<img src="../../assets/img/red.png" alt="">
+			<img src="../../assets/img/ROSE.png" alt="">
+			<!-- <span class="prev"><</span>
+			<span id="next">></span> -->
+		</div>
+		<div id="panel">
+			<img id="largeImage" src={{product.thumbnail}} />
 		</div>
 		<div id="info">
-			<p>price: </p>
+			<p>{{product.price}}</p>
 
 			<form (submit)="addItem()" #addItemForm="ngForm">
-			<p> Quantity :
-				<input type="number" name="quantity"
-				[(ngModel)]="newItem.quantity" #quantity="ngModel" ></p>	
+				<p> Quantity :
+					<input type="number" name="quantity" [(ngModel)]="newItem.quantity" #quantity="ngModel"></p>
 
 				<p>
-			<button type="submit" name="button">Add to Cart</button>
-	</p>
-</form>
+					<button type="submit" name="button">Add to Cart</button>
+			</form>
 		</div>
 	</div>
 
 
 
 	<div id="desc">
-		<h1>{{product.name}}</h1>
-			<p>{{product.desc}}</p>
+		<p>{{product.name}}</p>
+		<p>{{product.desc}}</p>
 	</div>
 </div>

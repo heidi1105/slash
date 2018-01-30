@@ -32,16 +32,16 @@ export class ProductInfoComponent implements OnInit {
 		})
 			.catch((err)=>{
 				console.log(err)
-			})		
+			})
 	}
 
   ngOnInit() {
   		this.getCart();
-		// $('#thumbs').delegate('img','click', function(){
-  // 		$('#largeImage').attr('src',$(this).attr('src'));
-		// });
+		$('#thumbs').delegate('img','click', function(){
+  		$('#largeImage').attr('src',$(this).attr('src'));
+		});
 		// $('#next').click(function(){
-  //     $(this).prev().find('.thumbnail').trigger('click')
+    //   $(this).prev().find('.thumbnail').trigger('click')
 		// console.log($(this).prev().find('.thumbnail').trigger('delegate'));
 		// });
 
@@ -82,5 +82,3 @@ export class ProductInfoComponent implements OnInit {
 		// 	console.log(err)
 		// })
 }
-
-
