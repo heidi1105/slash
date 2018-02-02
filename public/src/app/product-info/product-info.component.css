@@ -1,10 +1,13 @@
 #thumbs {
-	width: 22%;
+	width: 25%;
 	height: 150px;
 	display: inline-block;
 	float: left;
 	justify-content: space-between;
 	/* background: linear-gradient(180deg, rgba(224,224,224,.2),rgba(255,255,255,.3), rgba(255,255,255,.4)); */
+}
+#thumbs ul{
+	list-style: none;
 }
 #thumbs img {
 	max-width: 100%;
@@ -20,10 +23,9 @@
   max-width: 100%;
   margin: 40px 3%;
 }
-
 .container > div {
   border-radius: 5px;
-  padding: 1em;
+	padding: 0;
 
 }.container {
   display: grid;
@@ -31,32 +33,95 @@
   grid-gap: 0px;
   grid-auto-rows: minmax(450px, auto);
 }
-.gallery {
+#gallery {
   grid-column: 1 / 2;
   grid-row: 1 ;
 }
-.desc {
+#desc {
   grid-column: 2 / 2;
   grid-row: 1;
+	padding-top: 30px;
+}
+#desc p {
+	padding-right: 7%;
 }
 #panel{
 	text-align: center;
-	width: 78%;
-	display: inline-block;
+	width: 100%;
+	display: block;
+	height: 300px !important;
 }
 #largeImage{
-	width: 150px;
-
-}
-#largeImage img{
 	max-width: 100%;
 	max-height: 100%;
 }
 #info{
 	display: block;
-	margin-left: 19%;
+	margin-left: 22%;
 }
-@media only screen and (max-height : 600px){
+@media only screen and (max-width : 855px){
+	.container {
+	  grid-template-columns: repeat(1, 1fr);
+	}
+	#gallery {
+	  grid-column: 1 / 1;
+	  grid-row: 1;
+	}
+	#desc {
+	  grid-column: 1 / 1;
+	  grid-row: 2;
+		padding: 0;
+	}
+	#desc p {
+		padding-right: 0;
+	}
 }
-@media only screen and (max-width : 700px){
+@media only screen and (max-width : 450px){
+	.container{
+		margin-top: 20px;
+	}
+	.container > div{
+		height: 60vh;
+	}
+	#thumbs{
+		display: block;
+		width: 80%;
+		margin: auto;
+		padding: 2% 0;
+		border-bottom: 1px solid #dcdcdc;
+		border-top: 1px solid #dcdcdc;
+		float: none;
+		height: 120px;
+		text-align: justify;
+		vertical-align: top;
+	}
+	#thumbs ul li{
+		display: inline-block;
+		margin: auto !important;
+	}
+	#thumbs:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+	}
+	#panel{
+		height: 220px !important;
+		padding: 1%;
+	}
+	#info{
+		margin: 0;
+		text-align: center;
+	}
+	button{
+		border: 1px solid #333 !important;
+		background: #ffffff;
+	}
+	input{
+		border-bottom: 1px solid #333 !important;
+	}
+}
+@media only screen and (max-width : 380px){
+	#thumbs ul li{
+		width: 23%;
+	}
 }

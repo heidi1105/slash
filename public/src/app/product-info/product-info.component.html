@@ -1,26 +1,26 @@
 <div class="container">
 	<div id="gallery">
 		<div id="thumbs">
-			<img src="../../assets/img/ROSE.jpg" alt="">
-			<img src="{{product.thumbnail}}" alt="">
-			<img src="../../assets/img/red.png" alt="">
-			<img src="../../assets/img/ROSE.png" alt="">
-			<!-- <span class="prev"><</span>
-			<span id="next">></span> -->
+			<ul>
+				<li><img src="{{product.thumbnail}}" alt=""></li>
+				<li><img src="../../assets/img/red.png" alt=""></li>
+				<li><img src="../../assets/img/ROSE.png" alt=""></li>
+				<li><img src="../../assets/img/set.jpg" alt=""></li>
+			</ul>
 		</div>
 		<div id="panel">
 			<img id="largeImage" src={{product.thumbnail}} />
-		</div>
-		<div id="info">
-			<p>{{product.price}}</p>
+			<div id="info">
+				<p>{{product.price | currency:HKD:symbol}}</p>
 
-			<form (submit)="addItem()" #addItemForm="ngForm">
-				<p> Quantity :
-					<input type="number" name="quantity" [(ngModel)]="newItem.quantity" #quantity="ngModel"></p>
+				<form (submit)="addItem()" #addItemForm="ngForm">
+					<p> Quantity :
+						<input type="number" name="quantity" [(ngModel)]="newItem.quantity" #quantity="ngModel"></p>
 
-				<p>
-					<button type="submit" name="button">Add to Cart</button>
-			</form>
+					<p>
+						<button type="submit" name="button">Add to Cart</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
