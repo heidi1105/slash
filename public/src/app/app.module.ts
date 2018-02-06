@@ -17,6 +17,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ProductInfoComponent } from './product-info/product-info.component';
     AboutusComponent,
     ShippingComponent,
     AdminComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    CheckoutComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
