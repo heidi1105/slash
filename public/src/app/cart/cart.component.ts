@@ -11,8 +11,7 @@ import { Product } from './../product'
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-	order:object[];
-	product: Product = new Product();
+	orders:object[];
 
   constructor(private _slashService: SlashService, private _router: Router,
 	private _route: ActivatedRoute) { }
@@ -22,16 +21,24 @@ export class CartComponent implements OnInit {
   }
 
 	getCart(){
-		this._slashService.getCart()
+		this._slashService.getCartDetails()
 		.then((data)=>{
 			console.log("component/getting the cart items")
 			console.log(data)
-			this.order=data;
+			this.orders=data;
+
+
+
 		})
 			.catch((err)=>{
 				console.log(err)
 			})		
 	}
+
+
+
+
+
 
 	
 

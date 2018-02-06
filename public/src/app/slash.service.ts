@@ -78,5 +78,10 @@ export class SlashService {
 
 	}
 
+	getCartDetails(){
+		console.log("service/cart details")
+		return this._http.get('/api/getCartDetails').map(Response=>Response.json()).toPromise();
+	}
+
 
 }

@@ -3,14 +3,22 @@
 		<th> Item </th>
 		<th> Name </th>
 		<th> quantity </th>
+		<th> price </th>
 		<th> Action </th>
 	</tr>
 
-	<tr *ngFor=" let item of order ">
+	<tr *ngFor=" let item of orders ">
 
 		<td> index </td>
-		<td> {{item.i}} </td>
+		<td> {{item.name}} </td>
+		<td> {{item.quantity</td>
 		<td> {{item.quantity}} </td>
 		<td> <a href="">delete</a> | <a href="">update</a> </td>
 	</tr>
+	<tr>
+		<td rowspan="4"> Total </td>
+		<td> $xxx </td>
+	</tr>
 </table>
+
+
