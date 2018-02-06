@@ -134,7 +134,7 @@
 		overflow:auto;
 	}
 	.nav{
-		background: black;
+		background: #181818;
 		margin: 0;
 		position: absolute;
 		z-index: 10;
@@ -183,7 +183,7 @@
 		margin-top: -59px;
 	}
 	.dropdown-content a{
-		color: #000000 !important;
+		color: #181818 !important;
 	}
 }
 @media only screen and (max-width : 570px){

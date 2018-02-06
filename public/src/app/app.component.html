@@ -13,7 +13,7 @@
 		</div>
 		<a class="navLinks" *ngIf="!session" [routerLink]="['login']">Sign In</a>
 		<a class="navLinks" *ngIf="session" (click)="logout()">Sign Out</a>
-		<a class="navLinks" [routerLink]="['admin']"> Admin </a>
+		<!-- <a class="navLinks" [routerLink]="['admin']"> Admin </a> -->
 
 		<a [routerLink]="['cart']" class="navLinks cartLink"><img id="cart" src="assets/img/cart.svg"></a>
 		<a href="javascript:void(0);" class="icon navLinks" (click)="dropDown()">&#9776;</a>
