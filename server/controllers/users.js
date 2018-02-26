@@ -110,6 +110,51 @@ module.exports={
 		}
 	},
 
+	getCartDetails:(req, res)=>{
+		console.log("controllers/getCart1")
+		var order = req.session.order;
+		if (!req.session.order){
+			console.log("creating session.order")
+			req.session.order=[];
+			res.json([]);
+		}else{
+			console.log("controllers/getCart2")
+			
+			var orderList ="";
+			for (var i=0; i<order.length; i++){
+				orderList += " p.id = "+ order[i].productId
+				if (order[i+1]){
+					orderList+=" or "
+				}
+			}
+
+			
+			console.log("orderList "+ orderList)
+
+		models.sequelize.query("SELECT p.id as id, p.name as name, p.price as price, b.id as brandId, b.name as brandName FROM products p INNER JOIN brands b ON b.id = p.brandId where "+orderList
+			,{ bind: ['active'], type: models.sequelize.QueryTypes.SELECT })
+		.then((products, err)=>{
+			if(err){
+				console.log("err" + err)
+			}else{
+				for (var j=0; j<products.length; j++){
+					for (var k=0; k<order.length;k++){
+						if (products[j].id === order[k].id){
+							product[j].quantity= order[k].quantity
+						}
+					}
+				}
+				res.json(products)
+
+			}		
+		})
+
+
+			res.json([])
+		}
+	},
+
+
 	addItem:(req, res)=>{
 		let order=[];
 		if (!req.session.order){

@@ -39,7 +39,7 @@ export class AppComponent implements OnInit, DoCheck {
 
 
 	ngDoCheck(){
-		this.session = sessionStorage.getItem('session');
+		 this.session = sessionStorage.getItem('session');
 	}
 
 	dropDown() {

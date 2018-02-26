@@ -16,6 +16,7 @@ module.exports = (app)=>{
 	app.get('/api/getCategories', User.getCategories);
 	app.post('/api/createProduct', Admin.createProduct);
 	app.get('/api/getCart', User.getCart);
+	app.get('/api/getCartDetails', User.getCartDetails);
 	app.post('/api/addItem', User.addItem);	
 
 
