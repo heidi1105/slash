@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, DoCheck {
 
     getBrands(){
       this._slashService.getBrands()
-      .then((data)=>{       
+      .then((data)=>{
       this.brands=data;
     })
     .catch((err)=>{
@@ -53,11 +53,11 @@ export class AppComponent implements OnInit, DoCheck {
 	logout() {
 	console.log('logoff()');
 	this._slashService.logout()
-	.then((data) => {
-		sessionStorage.removeItem('session');
-		this.session = "";
-		this._router.navigate(['']);
-	})
-	.catch((err)=> console.log("logout", err))
-}
+		.then((data) => {
+			sessionStorage.removeItem('session');
+			this.session = "";
+			this._router.navigate(['']);
+		})
+		.catch((err)=> console.log("logout", err))
+	}
 }

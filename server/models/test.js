@@ -143,4 +143,4 @@
 //
 //
 //
-// sequelize.sync({force:true})
+ // sequelize.sync({force:true})
