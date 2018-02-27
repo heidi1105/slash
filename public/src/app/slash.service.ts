@@ -59,7 +59,7 @@ export class SlashService {
 
 	toCart(product){
 		console.log("added to cart");
-		return this._http.post("/api/addToCart", product).map(Response=>Response.json()).toPromise();
+		return this._http.post('/api/addItem/',product).map(Response=>Response.json()).toPromise();
 	}
 
 	getCurrentUser(){

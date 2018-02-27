@@ -30,7 +30,7 @@ export class ProductsComponent implements OnInit {
 	}
 	toCart(idx){
 		console.log("add to cart")
-		this._slashService.toCart(this.allProducts[idx])
+		this._slashService.addItem({productId:idx, quantity:1})
 		.then(()=>{
 			this.getProducts();
 		})

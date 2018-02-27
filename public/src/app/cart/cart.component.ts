@@ -12,6 +12,9 @@ import { Product } from './../product'
 })
 export class CartComponent implements OnInit {
 	orders:object[];
+	totalItem:number=0;
+	totalPrice:number=0;
+
 
   constructor(private _slashService: SlashService, private _router: Router,
 	private _route: ActivatedRoute) { }
@@ -26,7 +29,10 @@ export class CartComponent implements OnInit {
 			console.log("component/getting the cart items")
 			console.log(data)
 			this.orders=data;
-
+			for (var i=0; i<data.length; i++){
+				this.totalItem+=data[i].quantity;
+				this.totalPrice+=data[i].price*data[i].quantity;
+			}
 
 
 		})
