@@ -1,49 +1,25 @@
-<!-- <<<<<<< HEAD
-<table>
-	<tr>
-		<th> Item </th>
-		<th> Name </th>
-		<th> quantity </th>
-		<th> price </th>
-		<th> Action </th>
-	</tr>
 
-	<tr *ngFor=" let item of orders ">
-
-		<td> index </td>
-		<td> {{item.name}} </td>
-		<td> {{item.quantity</td>
-		<td> {{item.quantity}} </td>
-		<td> <a href="">delete</a> | <a href="">update</a> </td>
-	</tr>
-	<tr>
-		<td rowspan="4"> Total </td>
-		<td> $xxx </td>
-	</tr>
-</table>
-
-
-======= -->
 <h1 id="header">Shopping Cart</h1>
 <div id="container">
 	<!-- *ngIf="cart < 1" -->
 	<!-- <h2 class="empty">Your Shopping Cart is Empty.</h2> -->
 	<!-- *ngIf="cart > 0" -->
 	<div id="wrapper">
-		<div class="items">
+		<div class="items" *ngFor=" let item of orders ">
 				<div class="img">
-					<img class="img" src="../../assets/img/mayu.jpg" alt="">
+					<img class="img" src="{{item.thumbnail}}" alt={{item.name}}>
 				</div>
 				<div class="info">
-					<h3>ProductName by ProductCompany</h3>
+					<h3>{{item.name}} by {{item.brandName}}</h3>
 					<p>in Stock</p>
 					<button>delete</button>
 				</div>
-				<p class="price">$69.00</p>
+				<p class="price">${{item.price}}</p>
 				<div class="quantity">
 					<p>Quantity</p>
 					<form action="#" method="post">
-						<select>
+						<select value={{item.quantity}}>
+
 						  <option value="1">1</option>
 						  <option value="2">2</option>
 						  <option value="3">3</option>
@@ -59,96 +35,12 @@
 					</form>
 				</div>
 		</div>
-		<div class="items">
-				<div class="img">
-					<img class="img" src="../../assets/img/mayu.jpg" alt="">
-				</div>
-				<div class="info">
-					<h3>ProductName by ProductCompany</h3>
-					<p>in Stock</p>
-					<button>delete</button>
-				</div>
-				<p class="price">$69.00</p>
-				<div class="quantity">
-					<p>Quantity</p>
-					<form action="#" method="post">
-						<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-						</select>
-						<button type="submit">update</button>
-					</form>
-				</div>
-		</div>
-		<div class="items">
-				<div class="img">
-					<img class="img" src="../../assets/img/ROSE_.jpg" alt="">
-				</div>
-				<div class="info">
-					<h3>ProductName by ProductCompany</h3>
-					<p>in Stock</p>
-					<button>delete</button>
-				</div>
-				<p class="price">$69.00</p>
-				<div class="quantity">
-					<p>Quantity</p>
-					<form action="#" method="post">
-						<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-						</select>
-						<button type="submit">update</button>
-					</form>
-				</div>
-		</div>
-		<div class="items">
-				<div class="img">
-					<img class="img" src="../../assets/img/set.jpg" alt="">
-				</div>
-				<div class="info">
-					<h3>ProductName by ProductCompany</h3>
-					<p>in Stock</p>
-					<button>delete</button>
-				</div>
-				<p class="price">$69.00</p>
-				<div class="quantity">
-					<p>Quantity</p>
-					<form action="#" method="post">
-						<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-						</select>
-						<button type="submit">update</button>
-					</form>
-				</div>
-		</div>
+
+
+
 	</div>
 	<div id="subtotal">
-		<h3>Subtotal 4 item(s): $276.00</h3>
+		<h3>Subtotal {{totalItem}} item(s): ${{totalPrice}}</h3>
 		<button routerLink="">Proceed to Checkout</button>
 	</div>
 </div>

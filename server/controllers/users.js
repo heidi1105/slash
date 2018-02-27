@@ -131,26 +131,31 @@ module.exports={
 			
 			console.log("orderList "+ orderList)
 
-		models.sequelize.query("SELECT p.id as id, p.name as name, p.price as price, b.id as brandId, b.name as brandName FROM products p INNER JOIN brands b ON b.id = p.brandId where "+orderList
+		models.sequelize.query("SELECT p.id as id, p.name as name, p.price as price, p.thumbnail as thumbnail, b.id as brandId, b.name as brandName FROM products p INNER JOIN brands b ON b.id = p.brandId where "+orderList
 			,{ bind: ['active'], type: models.sequelize.QueryTypes.SELECT })
 		.then((products, err)=>{
 			if(err){
 				console.log("err" + err)
+				res.json([])
 			}else{
+				console.log("else in models.sequelize")
 				for (var j=0; j<products.length; j++){
+					console.log(order)
 					for (var k=0; k<order.length;k++){
-						if (products[j].id === order[k].id){
-							product[j].quantity= order[k].quantity
+						if (products[j].id == order[k].productId){
+							console.log("added product"+products[j].id)
+							products[j].quantity= order[k].quantity
 						}
 					}
 				}
+				console.log(products)
 				res.json(products)
 
 			}		
 		})
 
-
-			res.json([])
+			// console.log("outside loop")
+			// res.json([])
 		}
 	},
 
