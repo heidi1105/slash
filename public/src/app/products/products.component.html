@@ -34,7 +34,7 @@
 			<h5>{{product.brandName}}</h5>
 			<h5>{{product.name}}</h5>
 			<h6>{{product.price | currency:HKD:symbol}}</h6>
-			<button (click)="toCart(idx)">Add To Cart</button>
+			<button (click)="toCart(product.id)">Add To Cart</button>
 		</div>
 	</a>
 	</div>
