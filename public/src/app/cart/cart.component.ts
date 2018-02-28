@@ -46,6 +46,8 @@ export class CartComponent implements OnInit {
 		this._slashService.updateItem(this.orders[idx])
 		.then((data)=>{
 			console.log("updating item")
+			this.totalItem=0;
+			this.totalPrice=0;
 			this.getCart();
 		})
 		.catch((err)=>{
