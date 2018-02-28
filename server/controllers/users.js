@@ -196,6 +196,19 @@ module.exports={
 			// order.push(req.body);
 			// req.session.order=order;
 			// res.json(order)
+	},
+
+	deleteItem: (req,res)=>{
+		var order=[];
+		if(!req.session.order){
+			req.session.order=[];
+		}
+		order=req.session.order;
+
+		for(let i = 0; i<order.length; i++){
+			delete order[i];
+			res.json(order)
+		}
 	}
 
 

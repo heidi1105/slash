@@ -19,7 +19,7 @@ module.exports = (app)=>{
 	app.get('/api/getCartDetails', User.getCartDetails);
 	app.post('/api/addItem', User.addItem);
 	app.post('/api/updateItem', User.updateItem);
-
+	app.post('/api/deleteItem', User.deleteItem);
 
 	app.all("*", (req,res,next) => {
     res.sendFile(path.resolve("./public/dist/index.html"))

@@ -48,12 +48,21 @@ export class CartComponent implements OnInit {
 			console.log("updating item")
 			this.getCart();
 		})
-			.catch((err)=>{
-				console.log(err)
-			})
+		.catch((err)=>{
+			console.log(err)
+		})
 	}
 
-
+	deleteItem(idx){
+		this._slashService.deleteItem(this.orders[idx])
+		.then((data)=>{
+			console.log("deleting item")
+			this.getCart();
+		})
+		.catch((err)=>{
+			console.log(err)
+		})
+	}
 
 
 

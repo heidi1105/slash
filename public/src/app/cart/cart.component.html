@@ -12,7 +12,9 @@
 				<div class="info">
 					<h3>{{item.name}} by {{item.brandName}}</h3>
 					<p>in Stock</p>
-					<button>delete</button>
+					<form (submit)="deleteItem(idx)" #deleteItemForm="ngForm">
+						<button type="submit" >delete</button>
+					</form>
 				</div>
 				<p class="price">${{item.price}}</p>
 				<div class="quantity">
