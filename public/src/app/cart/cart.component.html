@@ -5,7 +5,7 @@
 	<!-- <h2 class="empty">Your Shopping Cart is Empty.</h2> -->
 	<!-- *ngIf="cart > 0" -->
 	<div id="wrapper">
-		<div class="items" *ngFor=" let item of orders ">
+		<div class="items" *ngFor=" let item of orders; let idx=index">
 				<div class="img">
 					<img class="img" src="{{item.thumbnail}}" alt={{item.name}}>
 				</div>
@@ -17,9 +17,9 @@
 				<p class="price">${{item.price}}</p>
 				<div class="quantity">
 					<p>Quantity</p>
-					<form action="#" method="post">
-						<input type="number" name="quantity" value="{{item.quantity}}">
-						<button type="submit">update</button>
+					<form (submit)="updateItem(idx)" #updateItemForm="ngForm">
+						<input type="number" name="quantity" value="{{item.quantity}}" [(ngModel)]="item.quantity" #quantity="ngModel">
+						<button type="submit" >update</button>
 					</form>
 				</div>
 		</div>

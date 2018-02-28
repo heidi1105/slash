@@ -14,7 +14,8 @@ export class CartComponent implements OnInit {
 	orders:object[];
 	totalItem:number=0;
 	totalPrice:number=0;
-
+	product: Product = new Product();
+	item:object={productId:"", quantity:0};
 
   constructor(private _slashService: SlashService, private _router: Router,
 	private _route: ActivatedRoute) { }
@@ -41,7 +42,16 @@ export class CartComponent implements OnInit {
 			})
 	}
 
-	
+	updateItem(idx){
+		this._slashService.updateItem(this.orders[idx])
+		.then((data)=>{
+			console.log("updating item")
+			this.getCart();
+		})
+			.catch((err)=>{
+				console.log(err)
+			})
+	}
 
 
 

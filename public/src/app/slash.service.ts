@@ -72,6 +72,11 @@ export class SlashService {
 		return this._http.post('/api/addItem', newItem).map(Response=>Response.json()).toPromise()
 	}
 
+	updateItem(item){
+		console.log("in service/updated item")
+		return this._http.post('/api/updateItem', item).map(res=>res.json()).toPromise();
+	}
+
 	getCart(){
 		console.log("service/current cart")
 		return this._http.get('/api/getCart').map(Response=>Response.json()).toPromise();

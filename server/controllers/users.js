@@ -30,7 +30,7 @@ module.exports={
 	// 		name: req.body.name,
 	// 		desc: req.body.desc,
 	// 		region: req.body.region
-	// 	}).then(function() {   	 
+	// 	}).then(function() {
  //  		});
 	// 	res.json(true);
 	// },
@@ -47,7 +47,7 @@ module.exports={
 			}else{
 
 				res.json(brands)
-			}		
+			}
 		})
 	},
 
@@ -61,7 +61,7 @@ module.exports={
 
 			}else{
 				res.json(products)
-			}		
+			}
 		})
 	},
 
@@ -78,7 +78,7 @@ module.exports={
 
 			}else{
 				res.json(products)
-			}		
+			}
 		})
 	},
 
@@ -94,7 +94,7 @@ module.exports={
 			}else{
 				console.log(categories)
 				res.json(categories)
-			}		
+			}
 		})
 	},
 
@@ -119,7 +119,7 @@ module.exports={
 			res.json([]);
 		}else{
 			console.log("controllers/getCart2")
-			
+
 			var orderList ="";
 			for (var i=0; i<order.length; i++){
 				orderList += " p.id = "+ order[i].productId
@@ -128,7 +128,7 @@ module.exports={
 				}
 			}
 
-			
+
 			console.log("orderList "+ orderList)
 
 		models.sequelize.query("SELECT p.id as id, p.name as name, p.price as price, p.thumbnail as thumbnail, b.id as brandId, b.name as brandName FROM products p INNER JOIN brands b ON b.id = p.brandId where "+orderList
@@ -151,7 +151,7 @@ module.exports={
 				console.log(products)
 				res.json(products)
 
-			}		
+			}
 		})
 
 			// console.log("outside loop")
@@ -170,7 +170,6 @@ module.exports={
 		for (var i =0; i<order.length; i++){
 			if (order[i]["productId"]===req.body.productId){
 				order[i]["quantity"]=order[i]["quantity"]+req.body.quantity;
-//				order[i]={productId:req.body.productId, quantity:req.session.order[i]["quantity"]+req.body.quantity}
 				req.session.order=order;
 
 				res.json(order)
@@ -179,9 +178,25 @@ module.exports={
 		order.push(req.body);
 		req.session.order=order;
 		res.json(order)
+	},
+
+	updateItem: (req, res)=>{
+		var order=[];
+		if(!req.session.order){
+			req.session.order=[];
+		}
+		order=req.session.order;
+
+		for(let i = 0; i<order.length; i++){
+			order[i]["quantity"]= req.body.quantity;
+			req.session.order=order;
+
+			res.json(order)
+			}
+			// order.push(req.body);
+			// req.session.order=order;
+			// res.json(order)
 	}
-
-
 
 
 }
@@ -199,7 +214,7 @@ module.exports={
 		// 	}else{
 		// 		console.log(brands);
 		// 		res.json(brands)
-		// 	}		
+		// 	}
 		// })
 
 // 	},
@@ -217,10 +232,6 @@ module.exports={
 // 		).then(function(record) {
 // //			console.log(record)
 //     	 		})
-  	
+
 // 		res.json(true);
 // 	},
-	
-
-
-
