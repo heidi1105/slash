@@ -161,23 +161,27 @@ module.exports={
 
 
 	addItem:(req, res)=>{
+		let check=false;
 		let order=[];
 		if (!req.session.order){
 			req.session.order=[]
 		}
 		order=req.session.order;
-
 		for (var i =0; i<order.length; i++){
 			if (order[i]["productId"]===req.body.productId){
 				order[i]["quantity"]=order[i]["quantity"]+req.body.quantity;
 				req.session.order=order;
-
-				res.json(order)
+				check=true;
+				break;
+//				res.json(true)
 			}
 		}
+		if(!check){
 		order.push(req.body);
-		req.session.order=order;
-		res.json(order)
+		req.session.order=order			
+		}
+
+		res.json(true)
 	},
 
 	updateItem: (req, res)=>{
@@ -187,12 +191,16 @@ module.exports={
 		}
 		order=req.session.order;
 
-		for(let i = 0; i<order.length; i++){
-			order[i]["quantity"]= req.body.quantity;
-			req.session.order=order;
 
-			res.json(order)
+		for(let i = 0; i<order.length; i++){
+			if (order[i]["productId"]== req.body.id){
+			order[i]["quantity"]= req.body.quantity;
+			req.session.order=order;				
 			}
+
+			}
+			console.log(order)
+			res.json(order)
 			// order.push(req.body);
 			// req.session.order=order;
 			// res.json(order)

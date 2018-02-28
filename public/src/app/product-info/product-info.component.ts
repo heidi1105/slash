@@ -10,7 +10,7 @@ import { Product } from './../product'
   styleUrls: ['./product-info.component.css']
 })
 export class ProductInfoComponent implements OnInit {
-	order:object[];
+	order:object[]=[];
 	product: Product = new Product();
 	newItem:object={productId:0, quantity:0};
   constructor(private _slashService: SlashService, private _router: Router,
@@ -66,6 +66,7 @@ export class ProductInfoComponent implements OnInit {
 			console.log("component/adding new item")
 			console.log(data)
 			this.newItem["quantity"]=0;
+			this._router.navigate(['cart'])		
 		})
 			.catch((err)=>{
 				console.log(err)
