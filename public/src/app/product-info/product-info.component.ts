@@ -12,12 +12,12 @@ import { Product } from './../product'
 export class ProductInfoComponent implements OnInit {
 	order:object[];
 	product: Product = new Product();
-	newItem:object={productId:"", quantity:0};
+	newItem:object={productId:0, quantity:0};
   constructor(private _slashService: SlashService, private _router: Router,
 	private _route: ActivatedRoute) {
    	      this._route.paramMap.subscribe( params => {
    	      		this.getOneProduct(params.get('id'));
-   	      		this.newItem['productId']=params.get('id');
+   	      		this.newItem['productId']=Number(params.get('id'));
    	      })
 
   }
