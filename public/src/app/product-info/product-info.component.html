@@ -15,8 +15,7 @@
 
 				<form (submit)="addItem()" #addItemForm="ngForm">
 					<p> Quantity :
-						<input type="number" name="quantity" [(ngModel)]="newItem.quantity" #quantity="ngModel"></p>
-
+						<input type="number" name="quantity" placeholder="{{product.quantity}}"[(ngModel)]="newItem.quantity" #quantity="ngModel"></p>
 					<p>
 						<button type="submit" name="button">Add to Cart</button>
 				</form>

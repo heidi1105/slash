@@ -45,6 +45,9 @@
 	width: 10%;
 	flex-grow: 1;
 }
+.quantity input{
+	width: 30%;
+}
 #subtotal{
 	flex-grow: 1;
 	background: linear-gradient(#FFFFFF, #ffffff, #F5F5F5);
@@ -88,5 +91,8 @@ button{
 	}
 	.items{
 		font-size: .8em;
+	}
+	.quantity input{
+		width: 40%;
 	}
 }

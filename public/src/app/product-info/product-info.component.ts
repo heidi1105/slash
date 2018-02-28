@@ -66,7 +66,6 @@ export class ProductInfoComponent implements OnInit {
 			console.log("component/adding new item")
 			console.log(data)
 			this.newItem["quantity"]=0;
-
 		})
 			.catch((err)=>{
 				console.log(err)
