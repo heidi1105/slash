@@ -65,19 +65,4 @@ export class AppComponent implements OnInit, DoCheck {
 		})
 		.catch((err)=> console.log("logout", err))
 	}
-
-	getCart(){
-		this._slashService.getCartDetails()
-		.then((data)=>{
-			console.log("cart number")
-			console.log(data)
-			this.orders=data;
-			for (var i=0; i<data.length; i++){
-				this.totalItem+=data[i].quantity;
-			}
-		})
-			.catch((err)=>{
-				console.log(err)
-		})
-	}
 }

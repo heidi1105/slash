@@ -178,7 +178,7 @@ module.exports={
 		}
 		if(!check){
 		order.push(req.body);
-		req.session.order=order			
+		req.session.order=order
 		}
 
 		res.json(true)
@@ -195,15 +195,12 @@ module.exports={
 		for(let i = 0; i<order.length; i++){
 			if (order[i]["productId"]== req.body.id){
 			order[i]["quantity"]= req.body.quantity;
-			req.session.order=order;				
+			req.session.order=order;
 			}
 
 			}
 			console.log(order)
 			res.json(order)
-			// order.push(req.body);
-			// req.session.order=order;
-			// res.json(order)
 	},
 
 	deleteItem: (req,res)=>{
@@ -214,9 +211,14 @@ module.exports={
 		order=req.session.order;
 
 		for(let i = 0; i<order.length; i++){
-			delete order[i];
-			res.json(order)
+			if (order[i]["productId"]== req.body.id){
+				//order[i]=undefined
+				//delete order[i]
+				delete order
+				console.log(order)
+			}
 		}
+		res.json(true)
 	}
 
 
