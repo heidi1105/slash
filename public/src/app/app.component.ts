@@ -28,7 +28,9 @@ export class AppComponent implements OnInit, DoCheck {
 			}else{
 				$(this).text("\u2715");
 			}});
+
 	}
+
 
 	ngDoCheck(){
 		this.session = sessionStorage.getItem('session');
@@ -45,6 +47,23 @@ export class AppComponent implements OnInit, DoCheck {
   })
 
   }
+
+
+	getTotal(){
+		console.log("getTotal!!!!")
+		this._slashService.getCart()
+		.then((data)=>{
+			this.orders=data;
+			for (var i=0; i<data.length; i++){
+				this.totalItem+=data[i].quantity;
+			}
+			console.log(data)
+			console.log(this.totalItem)
+		})
+			.catch((err)=>{
+				console.log(err)
+			})
+	}
 
 
 	dropDown() {

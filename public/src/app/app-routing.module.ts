@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { MediaComponent } from './media/media.component';
 import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +25,10 @@ const routes: Routes = [
 {
 	path: 'cart',
 	component: CartComponent
+},
+{
+	path: 'checkout',
+	component: CheckoutComponent
 },
 {
 	path: 'media',
