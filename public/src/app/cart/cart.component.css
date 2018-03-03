@@ -6,11 +6,12 @@
 #wrapper{
 	height: auto;
 	text-align: center;
-	flex-grow: 2;
+	flex-grow: 4;
 }
 #header{
 	color: #ffffff;
 	font-size: 1em;
+	padding: 5px;
 	background: #181818;
 }
 .items{
@@ -48,17 +49,28 @@
 .quantity input{
 	width: 30%;
 }
+.black{
+	color: #181818;
+}
 #subtotal{
 	flex-grow: 1;
 	background: linear-gradient(#FFFFFF, #ffffff, #F5F5F5);
 	padding: 2%;
+	width: 100px;
 	height: 120px;
-	border-radius: 10px;
+	/* border-radius: 10px; */
+	text-align: left;
+}
+#shipInfo{
+	width: 20px;
+	vertical-align: bottom;
+	cursor: pointer;
 }
 button{
 	border: 1px solid #878787;
 	color: #181818;
 	background-color: #ffffff;
+	cursor: pointer;
 }
 @media only screen and (max-width : 820px){
 	#header{
