@@ -5,7 +5,7 @@
 	background: #181818;
 }
 #container{
-	width: 100%;
+	width: 90%;
 	text-align: center;
 	display: flex;
 	overflow: scroll;
@@ -13,7 +13,7 @@
 #paymentInfo{
 	height: auto;
 	text-align: center;
-	flex-grow: 6;
+	flex-grow: 7;
 }
 #checkoutInfo{
 	flex-grow: 1;
@@ -38,15 +38,20 @@
 	color: #000000 !important;
 	flex-grow: 1;
 }
-#items{
-	display: flex;
+#itemContainer{
+	height: 270px;
+	overflow: scroll;
+	/* padding-left: 5%; */
+	margin: 0;
+}
+.items{
 	padding: 2%;
-	font-size: 1.1em;
-	height: 250px;
+	height: 130px;
+	display: flex;
 }
 #checkoutImage{
 	flex-grow: 1;
-	height: 200px;
+	height: 120px;
 }
 #checkoutImage img{
 	max-width: 100%;
@@ -54,11 +59,12 @@
 }
 #itemInfo{
 	flex-grow: 2;
+	font-size: .8em;
 }
 #itemInfo p{
 	display: block;
-	font-size: .9em;
 	padding: 0;
+	line-height: .7;
 	color: #000000 !important;
 }
 .edit{

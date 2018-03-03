@@ -8,15 +8,17 @@
 			<p class="left">69 Item(s)</p>
 			<p class="right edit" [routerLink]="['/cart']">Edit</p>
 		</div>
-		<div id="items" *ngFor=" let item of orders; let idx=index ">
-			<div id="checkoutImage">
-				<img src="{{ item.thumbnail}}">
-			</div>
-			<div id="itemInfo">
-				<p>${{item.price}}</p>
-				<p>{{item.name}} by: {{item.brandName}}</p>
-				<p>Quantity: {{item.quantity}}</p>
-				<p>Total: ${{item.price*item.quantity}}</p>
+		<div id="itemContainer">
+			<div class="items" *ngFor=" let item of orders; let idx=index ">
+				<div id="checkoutImage">
+					<img src="{{ item.thumbnail}}">
+				</div>
+				<div id="itemInfo">
+					<p>${{item.price}}</p>
+					<p>{{item.name}} by: {{item.brandName}}</p>
+					<p>Quantity: {{item.quantity}}</p>
+					<p>Total: ${{item.price*item.quantity}}</p>
+				</div>
 			</div>
 		</div>
 		<div id="total">
