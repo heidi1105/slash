@@ -1,7 +1,46 @@
 <h1 id="header">Checkout</h1>
 <div id="container">
 	<div id="paymentInfo">
-
+		<form action="shippingInfo" method="post">
+			<div class="shipDiv">
+				<p>Shipping Country</p>
+				<input type="text" name="country" >
+			</div>
+			<div class="shipDiv">
+				<p>Promo Code</p>
+				<input type="text" name="promo">
+			</div>
+			<div class="shipDiv">
+				<p>Email or <span *ngIf="!session" [routerLink]="['login']">Login/Register</span></p>
+				<input type="email" name="email">
+			</div>
+			<div class="shipDiv">
+				<p>Shipping Address</p>
+				<input type="address" name="address" placeholder="Address">
+				<input type="address" name="address2" placeholder="Address 2">
+				<input type="text" name="city" placeholder="City">
+				<input type="text" name="state" placeholder="State">
+				<input type="number" name="zipcode" placeholder="Zip Code">
+			</div>
+			<div class="shipDiv">
+				<p>Payment</p>
+				<form action="your-server-side-code" method="POST">
+				  <script
+				    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				    data-key="pk_test_X2OJCS4UnTm7Ytui37KZgxzJ"
+				    data-amount="999"
+				    data-name="Slash"
+				    data-description="Example charge"
+				    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+				    data-locale="auto"
+				    data-currency="hkd">
+				  </script>
+				</form>
+			</div>
+			<div class="shipDiv">
+				<input type="submit" name="checkout" value="Checkout">
+			</div>
+		</form>
 	</div>
 	<div id="checkoutInfo">
 		<div id="itemCount">
@@ -27,18 +66,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-<form action="your-server-side-code" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_X2OJCS4UnTm7Ytui37KZgxzJ"
-    data-amount="999"
-    data-name="Slash"
-    data-description="Example charge"
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto"
-    data-currency="hkd">
-  </script>
-</form>
