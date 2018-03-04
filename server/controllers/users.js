@@ -212,13 +212,12 @@ module.exports={
 
 		for(let i = 0; i<order.length; i++){
 			if (order[i]["productId"]== req.body.id){
-				//order[i]=undefined
-				//delete order[i]
-				delete order
-				console.log(order)
+				delete order[i];
+				req.session.order = order;
 			}
 		}
-		res.json(true)
+		console.log(order, "deleted")
+		res.json(order)
 	}
 
 

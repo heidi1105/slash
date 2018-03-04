@@ -30,7 +30,8 @@
 
 	</div>
 	<div id="subtotal">
-		<h3>Subtotal {{totalItem}} item(s): ${{totalPrice}}</h3>
-		<button routerLink="/checkout">Proceed to Checkout</button>
+		<h3>Subtotal <span class="black">{{totalItem}}</span> item(s): <span class="black">${{totalPrice}}</span></h3>
+		<h3>Shipping: <span [routerLink]="['/shipping']"><img id="shipInfo" src="../../assets/img/i.png"></span></h3>
+		<button [routerLink]="['/checkout']">Proceed to Checkout</button>
 	</div>
 </div>

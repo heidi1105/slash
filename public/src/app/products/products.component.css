@@ -85,6 +85,12 @@ select::-ms-expand {
 .product-info{
 	width: 100%;
 }
+button{
+	border: 1px solid #DCDCDC !important;
+	color: #181818;
+	background-color: #ffffff;
+	cursor: pointer;
+}
 
 
 @media (max-width : 820px){
