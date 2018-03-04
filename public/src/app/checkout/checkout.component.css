@@ -5,27 +5,30 @@
 	background: #181818;
 }
 #container{
-	width: 90%;
+	width: 80%;
 	text-align: center;
 	display: flex;
 	overflow: scroll;
+	margin-left: 10%;
 }
 #paymentInfo{
 	height: auto;
 	text-align: center;
-	flex-grow: 7;
+	flex-grow: 6;
+	border: 2px solid black;
+	height: 450px;
+	overflow: scroll;
 }
 #checkoutInfo{
 	flex-grow: 1;
 	background: linear-gradient(#FFFFFF, #ffffff, #F5F5F5);
 	padding: 0 2%;
-	height: 400px;
+	height: 430px;
 	overflow: scroll;
 	text-align: left;
 }
 #itemCount{
 	font-size: 1.1em;
-	border-bottom: 1px solid #999999;
 	display: flex;
 	padding: 0;
 }
@@ -41,7 +44,6 @@
 #itemContainer{
 	height: 270px;
 	overflow: scroll;
-	/* padding-left: 5%; */
 	margin: 0;
 }
 .items{
@@ -71,10 +73,28 @@
 	cursor: pointer;
 }
 #total{
-	border-top: 1px solid #999999;
 	display: flex;
 }
 #total p{
+	color: #ffffff !important;
+	font-size: 1.3em;
+	background: #181818;
+	padding: 1%;
+}
+button{
+	border: 1px solid #DCDCDC !important;
+	color: #181818;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+.shipDiv{
+	border: 1px solid #dcdcdc;
+	padding: 2% 0;
+	width: 100%;
+	text-align: left;
+}
+h3{
+	margin: 0;
 	color: #ffffff !important;
 	font-size: 1.3em;
 	background: #181818;
