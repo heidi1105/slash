@@ -1,6 +1,7 @@
 <h1 id="header">Checkout</h1>
 <div id="container">
 	<div id="paymentInfo">
+		<h3>Shipping</h3>
 		<form action="shippingInfo" method="post">
 			<div class="shipDiv">
 				<p>Shipping Country</p>
@@ -104,7 +105,7 @@
 					<option value="HM">Heard Island and McDonald Islands</option>
 					<option value="VA">Holy See (Vatican City State)</option>
 					<option value="HN">Honduras</option>
-					<option value="HK">Hong Kong</option>
+					<option value="HK" selected>Hong Kong</option>
 					<option value="HU">Hungary</option>
 					<option value="IS">Iceland</option>
 					<option value="IN">India</option>
@@ -255,21 +256,29 @@
 					<option value="ZM">Zambia</option>
 					<option value="ZW">Zimbabwe</option>
 				</select>
-				<p>Email or <span *ngIf="!session" [routerLink]="['login']">Login/Register</span></p>
-				<input type="email" name="email">
-				<label for="promo">Promo Code</label>
-				<input type="text" name="promo">
+				<div class="infoDiv">
+					<input class="input" type="text" name="firstName" placeholder="First Name">
+					<input class="input" type="text" name="lastName" placeholder="Last Name">
+				</div>
+				<input class="address" type="text" name="address" placeholder="Address">
+				<input class="address" type="text" name="address2" placeholder="Address - Optional">
+				<div class="infoDiv">
+					<input class="input" type="text" name="city" placeholder="City">
+					<input class="input" type="text" name="state" placeholder="State/District">
+					<input class="input" type="text" name="zipcode" placeholder="Postal Code">
+				</div>
+				<p *ngIf="!session" id="login" [routerLink]="['login']">Login or Register</p>
+				<div class="infoDiv">
+					<input *ngIf="!session" class="input" type="email" name="email" placeholder="Email">
+					<input class="input" type="tel" name="phone" placeholder="Phone Number">
+				</div>
 			</div>
-			<div class="shipDiv">
-				<p>Shipping Address</p>
-				<input type="address" name="address" placeholder="Address">
-				<input type="address" name="address2" placeholder="Address 2">
-				<input type="text" name="city" placeholder="City">
-				<input type="text" name="state" placeholder="State">
-				<input type="number" name="zipcode" placeholder="Zip Code">
+			<div>
+				<p id="promo">PROMO CODE</p>
+				<input id="code" type="text" name="promo" placeholder="Code">
 			</div>
+			<h3>Payment</h3>
 			<div class="shipDiv">
-				<p>Payment</p>
 				<form action="your-server-side-code" method="POST">
 				  <script
 				    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -284,18 +293,18 @@
 				</form>
 			</div>
 			<div class="shipDiv">
-				<input type="submit" name="checkout" value="Checkout">
+				<input id="button" type="submit" name="checkout" value="Checkout">
 			</div>
 		</form>
 	</div>
 	<div id="checkoutInfo">
-		<h3>Summary</h3>
+		<h3 class="checkoutHeaders">Summary</h3>
 		<div id="itemCount">
 			<p class="left">69 Item(s)</p>
 			<p class="right edit" [routerLink]="['/cart']">Edit</p>
 		</div>
 		<div id="itemContainer">
-			<h3>In Your Cart</h3>
+			<h3 class="checkoutHeaders">In Your Cart</h3>
 			<div class="items" *ngFor=" let item of orders; let idx=index ">
 				<div id="checkoutImage">
 					<img src="{{ item.thumbnail}}">
