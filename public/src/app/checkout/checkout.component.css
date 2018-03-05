@@ -3,6 +3,8 @@
 	font-size: 1em;
 	padding: 5px;
 	background: #181818;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 #container{
 	width: 80%;
@@ -20,20 +22,24 @@
 }
 #checkoutInfo{
 	flex-grow: 1;
-	background: linear-gradient(#FFFFFF, #ffffff, #F5F5F5);
+	/* background: linear-gradient(#FFFFFF, #ffffff, #F5F5F5); */
 	padding: 0 2%;
 	height: 430px;
-	overflow: scroll;
 	text-align: left;
 }
 .checkoutHeaders{
 	background: #181818 !important;
-	width: 100%;
+	width: 98%;
 	color: #ffffff !important;
+	margin: 0;
 }
 #itemCount{
 	font-size: 1.1em;
-	display: flex;
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 	padding: 0;
 }
 .right{
@@ -46,13 +52,17 @@
 	flex-grow: 1;
 }
 #itemContainer{
-	height: 270px;
+	height: 250px;
 	overflow: scroll;
 	margin: 0;
 }
 .items{
 	padding: 2%;
 	height: 130px;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 }
 #checkoutImage{
@@ -75,15 +85,18 @@
 }
 .edit{
 	cursor: pointer;
+	text-decoration: underline;
 }
 #total{
 	display: flex;
 }
 #total p{
 	color: #ffffff !important;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	background: #181818;
 	padding: 1%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 #button{
 	border: 1px solid #181818 !important;
@@ -94,6 +107,8 @@
 	width: 82%;
 	margin: auto;
 	padding: 5px 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .shipDiv{
 	/* border: 1px solid #dcdcdc; */
@@ -106,14 +121,20 @@
 h3{
 	margin: 0 auto;
 	color: #181818 !important;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	background: #f5f5f5;
 	padding: 1%;
 	width: 80%;
 	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .infoDiv{
 	width: 81%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 	justify-content:space-between;
 	margin: auto;
@@ -165,4 +186,30 @@ input{
 #login:hover{
 	color: #181818;
 	text-decoration: underline;
+}
+@media only screen and (max-width : 1010px){
+	#container{
+		width: 95%;
+		margin: auto;
+	}
+}
+@media only screen and (max-width : 870px){
+	#header{
+		background: #ffffff;
+		border-bottom: 1px solid #878787;
+		color: #181818;
+		font-size: 1.1em;
+	}
+	.infoDiv{
+		width: 91%;
+		display: block;
+	}
+	.input{
+		display: block;
+		width: 90%;
+		flex: none;
+	}
+	.address{
+		width: 82%;
+	}
 }

@@ -303,8 +303,8 @@
 			<p class="left">69 Item(s)</p>
 			<p class="right edit" [routerLink]="['/cart']">Edit</p>
 		</div>
+		<h3 class="checkoutHeaders">In Your Cart</h3>
 		<div id="itemContainer">
-			<h3 class="checkoutHeaders">In Your Cart</h3>
 			<div class="items" *ngFor=" let item of orders; let idx=index ">
 				<div id="checkoutImage">
 					<img src="{{ item.thumbnail}}">
