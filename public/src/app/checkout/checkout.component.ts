@@ -11,6 +11,13 @@ export class CheckoutComponent implements OnInit {
 	orders:object[];
 	totalItem:number=0;
 	totalPrice:number=0;	
+	cardNumber: string;
+  	expiryMonth: string;
+  	expiryYear: string;
+  	cvc: string;
+
+  	message: string;
+
 
 
   constructor(private _slashService: SlashService, private _router: Router,
@@ -39,4 +46,23 @@ export class CheckoutComponent implements OnInit {
 	}
 
 
+	getToken() {
+    this.message = 'Loading...';
+
+    (<any>window).Stripe.card.createToken({
+      number: this.cardNumber,
+      exp_month: this.expiryMonth,
+      exp_year: this.expiryYear,
+      cvc: this.cvc
+    }, (status: number, response: any) => {
+      if (status === 200) {
+        this.message = `Success! Card token ${response.card.id}.`;
+      } else {
+        this.message = response.error.message;
+      }
+    });
+  }
 }
+
+
+
