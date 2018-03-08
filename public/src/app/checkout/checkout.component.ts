@@ -10,6 +10,7 @@ import {ActivatedRoute, Router } from '@angular/router';
 export class CheckoutComponent implements OnInit {
 	orders:object[];
 	totalItem:number=0;
+
 	totalPrice:number=0;	
 	cardNumber: string;
   	expiryMonth: string;
@@ -17,8 +18,6 @@ export class CheckoutComponent implements OnInit {
   	cvc: string;
 
   	message: string;
-
-
 
   constructor(private _slashService: SlashService, private _router: Router,
 	private _route: ActivatedRoute) { }
@@ -43,6 +42,14 @@ export class CheckoutComponent implements OnInit {
 			.catch((err)=>{
 				console.log(err)
 			})
+	}
+	dropDown() {
+		var x = document.getElementById("responsiveCheckout");
+		if (x.className === "responsiveCheckout") {
+			x.className = "dropDown";
+		} else {
+			x.className = "responsiveCheckout";
+		}
 	}
 
 

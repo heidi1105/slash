@@ -1,6 +1,31 @@
 
 <h1 id="header">Checkout</h1>
 <div id="container">
+	<h3 class="checkoutHeaders summary" href="javascript:void(0);"  (click)="dropDown()">Summary <span class="edit">69</span></h3>
+	<div id="responsiveCheckout" class="responsiveCheckout">
+		<div id="itemCount">
+			<p class="left">69 Item(s)</p>
+			<p class="right edit" [routerLink]="['/cart']">Edit</p>
+		</div>
+		<h3 class="checkoutHeaders">In Your Cart</h3>
+		<div id="itemContainer">
+			<div class="items" *ngFor=" let item of orders; let idx=index ">
+				<div id="checkoutImage">
+					<img src="{{ item.thumbnail}}">
+				</div>
+				<div id="itemInfo">
+					<p>${{item.price}}</p>
+					<p>{{item.name}} by: {{item.brandName}}</p>
+					<p>Quantity: {{item.quantity}}</p>
+					<p>Total: ${{item.price*item.quantity}}</p>
+				</div>
+			</div>
+		</div>
+		<div id="total">
+			<p class="left">Total to Pay:</p>
+			<p class="right">$420</p>
+		</div>
+	</div>
 	<div id="paymentInfo">
 		<h3>Shipping</h3>
 		<form action="shippingInfo" method="post">
@@ -264,9 +289,9 @@
 				<input class="address" type="text" name="address" placeholder="Address">
 				<input class="address" type="text" name="address2" placeholder="Address - Optional">
 				<div class="infoDiv">
-					<input class="input" type="text" name="city" placeholder="City">
-					<input class="input" type="text" name="state" placeholder="State/District">
-					<input class="input" type="text" name="zipcode" placeholder="Postal Code">
+					<input class="cityInput" type="text" name="city" placeholder="City">
+					<input class="stateInput" type="text" name="state" placeholder="State/District">
+					<input class="cityInput" type="text" name="zipcode" placeholder="Postal Code">
 				</div>
 				<p *ngIf="!session" id="login" [routerLink]="['login']">Login or Register</p>
 				<div class="infoDiv">
@@ -274,9 +299,9 @@
 					<input class="input" type="tel" name="phone" placeholder="Phone Number">
 				</div>
 			</div>
-			<div>
+			<div id="code">
 				<p id="promo">PROMO CODE</p>
-				<input id="code" type="text" name="promo" placeholder="Code">
+				<input type="text" name="promo" placeholder="Code">
 			</div>
 			<h3>Payment</h3>
 
