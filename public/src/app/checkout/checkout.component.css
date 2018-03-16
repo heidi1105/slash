@@ -8,10 +8,9 @@
 }
 #container{
 	width: 80%;
-	text-align: center;
+	text-align: left;
 	display: flex;
 	overflow: scroll;
-	margin-left: 10%;
 }
 .responsiveCheckout{
 	display: none !important;
@@ -46,7 +45,7 @@
 	margin: 0;
 }
 #itemCount{
-	font-size: 1.1em;
+	font-size: 1em;
 	display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -113,7 +112,7 @@
 }
 #button{
 	border: 1px solid #181818 !important;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	color: #ffffff;
 	background-color: #181818;
 	cursor: pointer;
@@ -137,33 +136,32 @@ h3{
 	font-size: 1.1em;
 	background: #f5f5f5;
 	padding: 1%;
-	width: 90%;
+	width: 80%;
 	text-align: left;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 .infoDiv{
-	width: 81%;
+	width: 61%;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	justify-content:space-between;
+	justify-content:space-around;
 	margin: auto;
 }
 .input{
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	flex-grow: 1;
+	width: 45%;
+	margin: auto;
 }
 .cityInput {
-	width: 40%;
+	width: 33%;
+	margin: auto;
 }
 .stateInput{
-	width: 22%;
+	width: 19%;
+	margin: auto;
 }
 ::placeholder {
     color: #181818;
@@ -178,17 +176,17 @@ h3{
     color: #181818;
 }
 .address{
-	width: 80%;
+	width: 58%;
 	display: block;
 	margin: 1% auto;
 }
 select{
 	display: block;
 	margin: 1% auto;
-	font-size: 1em;
+	font-size: .8em;
 }
 input{
-	font-size: 1rem;
+	font-size: .8rem;
 	margin: 1% auto;
 }
 #code{

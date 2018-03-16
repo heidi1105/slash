@@ -141,7 +141,7 @@ module.exports={
 				console.log("else in models.sequelize")
 				for (var j=0; j<products.length; j++){
 					console.log(order)
-					for (var k=0; k<order.length;k++){
+					for (var k=0; k<order.length; k++){
 						if (products[j].id == order[k].productId){
 							console.log("added product"+products[j].id)
 							products[j].quantity= order[k].quantity
