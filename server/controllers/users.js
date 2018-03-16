@@ -227,6 +227,7 @@ module.exports={
 
 
 
+
 		// models.brands.findAll({
 		// 	attributes:['id', 'name'], raw:true
 		// }).then((err, brands)=>{
